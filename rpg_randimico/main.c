@@ -35,3 +35,42 @@ int main()
 
     return 0;
 }
+
+/*  Funcao do comerciante */
+void acao_comerciante(void)
+{
+    int x, op;
+    x = rand() % 2;
+    printf("----------------------------------------- \n");
+    printf("Comerciante: Bem vindo aventureiro! \n");
+    printf("Gostaria de comprar ");
+    switch(x)
+    {
+        case(0):
+            printf("uma espada por 100 moedas de ouro? \n");
+            printf("1. Sim \n");
+            printf("2. Nao \n");
+            scanf("%d", &op);
+            setbuf(stdin, NULL);
+            switch(op)
+            {
+                case(1):
+                    if(personagem.ouro >= 100)
+                    {
+                        printf("Hehe, volte sempre! \n");
+                        personagem.ouro = personagem.ouro - 100;
+                    }
+                    else
+                    {
+                        printf("Sem dinherio, sem arma! \n");
+                    }
+                    break;
+                case(2):
+                    printf("Que pena... \n");
+                    break;
+                default:
+                    printf("Nao brinque comigo, quer saber? Vou embora que ganho mais! \n");
+            }
+            break;
+    }
+}
