@@ -53,3 +53,10 @@ Ladrões:
 Ogro:
 1. Lutar
 2. Fugir
+
+Ordem de criação das funções:
+1. Printar menu
+2. Verificar opção
+3. Rodar jogo
+4. Gerador de aventura
+5. verificar aventura
