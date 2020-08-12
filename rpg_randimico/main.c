@@ -12,9 +12,7 @@ int verificar_opcao(int opcao);
 /*  Funcao que o jogo em si vai rodar */
 int rodar_jogo(void);
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
-void gerador_aventura(void);
-/*  Funcao que verifica qual foi o local e o acontecimento e os ativa de fato */
-int verificar_aventura(int x, int y);
+int gerador_aventura(int x, int y);
 /*  Funcao do NPC */
 void acao_npc(void);
 /*  Funcao do comerciante */
@@ -45,6 +43,8 @@ int rodar_jogo(void)
     do
     {
         system("cls");
-        loop = verificar_aventura(gerador_aventura());
+        loop = gerador_aventura(rand() % 5, rand() % 5);
+        system("pause");
     }while(loop != -1);
+    return -1;
 }
