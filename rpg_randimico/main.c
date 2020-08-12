@@ -25,6 +25,10 @@ void acao_padre(void);
 void acao_ladrao(void);
 /*  Funcao do ogro */
 void acao_ogro(void);
+/*  Funcao que reseta o personagem */
+void resetar_personagem(void);
+/*  Funcao que aumenta os atributos dos personagem de acordo com seu level */
+void aumentar_atributos(void);
 
 /*  Funcao main */
 int main()
