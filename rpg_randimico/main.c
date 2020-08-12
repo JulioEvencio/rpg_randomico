@@ -10,13 +10,14 @@ typedef struct Atributos
     char nome[100];
     int level;
     int xp;
+    int ouro;
     int ataque;
     int vida_maxima;
     int vida_atual;
     int velocidade;
-    bool arma;
-    bool armadura;
-    bool amuleto;
+    int arma;
+    int armadura;
+    int amuleto;
 }Atributos_base;
 Atributos_base personagem;
 
