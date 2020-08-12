@@ -8,7 +8,7 @@
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void);
 /*  Funcao que recebe e verifica a opcao do usuario e a ativa */
-void verificar_opcao(int opcao);
+int verificar_opcao(int opcao);
 /*  Funcao que o jogo em si vai rodar */
 int rodar_jogo(void);
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
