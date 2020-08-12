@@ -8,6 +8,8 @@
 typedef struct Atributos
 {
     char nome[100];
+    int level;
+    int xp;
     int ataque;
     int vida;
     int velocidade;
