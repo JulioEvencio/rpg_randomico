@@ -4,6 +4,19 @@
 #include <time.h>
 #include <string.h>
 
+/*  Struct de atributos do usuario */
+typedef struct Atributos
+{
+    char nome[100];
+    int ataque;
+    int vida;
+    int velocidade;
+    bool arma;
+    bool armadura;
+    bool amuleto;
+}Atributos_base;
+Atributos_base personagem;
+
 /*  Funcoes */
 
 /*  Funcao main */
