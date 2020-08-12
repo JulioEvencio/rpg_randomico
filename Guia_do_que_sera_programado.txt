@@ -59,4 +59,8 @@ Ordem de criação das funções:
 2. Verificar opção
 3. Rodar jogo
 4. Gerador de aventura
-5. verificar aventura
+5. Ação do NPC
+6. Ação do comerciante
+7. Ação do padre
+8. Ação do ladrão
+9. Ação do ogro 
