@@ -43,7 +43,7 @@ int rodar_jogo(void)
     do
     {
         system("cls");
-        loop = gerador_aventura(rand() % 5, rand() % 5);
+        loop = gerador_aventura(rand() % 4, rand() % 4);
         system("pause");
     }while(loop != -1);
     return -1;
