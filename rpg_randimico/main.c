@@ -11,7 +11,8 @@ typedef struct Atributos
     int level;
     int xp;
     int ataque;
-    int vida;
+    int vida_maxima;
+    int vida_atual;
     int velocidade;
     bool arma;
     bool armadura;
