@@ -72,5 +72,32 @@ void acao_comerciante(void)
                     printf("Nao brinque comigo, quer saber? Vou embora que ganho mais! \n");
             }
             break;
+        case(1):
+            printf("uma armadura por 80 moedas de ouro? \n");
+            printf("1. Sim \n");
+            printf("2. Nao \n");
+            scanf("%d", &op);
+            setbuf(stdin, NULL);
+            switch(op)
+            {
+                case(1):
+                    if(personagem.ouro >= 100)
+                    {
+                        printf("Haha, nos vemos em breve! \n");
+                        personagem.ouro = personagem.ouro - 100;
+                    }
+                    else
+                    {
+                        printf("Voce nao tem ouro suficiente! \n");
+                    }
+                    break;
+                case(2):
+                    printf("Ok entao, nos vemos em breve! \n");
+                    break;
+                default:
+                    printf("Nao brinque comigo, quer saber? Vou embora rapa! \n");
+                    
+            }
+            break;
     }
 }
