@@ -65,7 +65,17 @@ void inicar_luta(void);
 /*  Funcao main */
 int main()
 {
-    /*  */
+    /*  Variaveis */
+    int loop;
+    /*  Loop do menu do jogo */
+    do
+    {
+        system("clear");
+        loop = verificar_opcao(printar_menu());
+        printf("Pressione qualquer tecla para continuar... \n");
+        getchar();
+    } while (loop != -1);
+    
 
     return 0;
 }
@@ -77,7 +87,7 @@ int printar_menu(void)
     printf("------MENU------ \n");
     printf("1. Novo jogo \n");
     printf("2. Rank \n");
-    printf("3. Sair do jogo \n");
+    printf("0. Sair do jogo \n");
     printf("Opcao: ");
     scanf("%d", &opcao);
     setbuf(stdin, NULL);
@@ -110,7 +120,6 @@ int verificar_opcao(int opcao)
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
 int gerador_aventura(int x, int y)
 {
-    system("cls");
     /*  Texto do terreno */
     printf("Voce chegou a ");
     switch(x)
@@ -125,7 +134,7 @@ int gerador_aventura(int x, int y)
             printf("uma floresta ");
             break;
         case(3):
-            printf("uma Planice ");
+            printf("uma planice ");
             break;
         case(4):
             printf("uma masmorra ");
@@ -137,23 +146,23 @@ int gerador_aventura(int x, int y)
     {
         case(0):
             printf("um aldeao \n");
-            acao_npc();
+            /* acao_npc(); */
             break;
         case(1):
             printf("um comerciante \n");
-            acao_comerciante();
+            /* acao_comerciante();*/
             break;
         case(2):
             printf("um padre \n");
-            acao_padre();
+            /* acao_padre(); */
             break;
         case(3):
             printf("um ladrao \n");
-            acao_ladrao();
+            /* acao_ladrao(); */
             break;
         case(4):
             printf("um ogro \n");
-            acao_ogro();
+            /* acao_ogro(); */
             break;
     }
     /*  Verificando se o personagem esta vivo */
