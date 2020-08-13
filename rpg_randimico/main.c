@@ -39,6 +39,7 @@ int main()
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void)
 {
@@ -74,4 +75,64 @@ int verificar_opcao(int opcao)
             return 0;
     }
 >>>>>>> origin/verificar_opcao
+=======
+/* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
+int gerador_aventura(int x, int y)
+{
+    system("cls");
+    /*  Texto do terreno */
+    printf("Voce chegou a ");
+    switch(x)
+    {
+        case(0):
+            printf("uma cidade ");
+            break;
+        case(1):
+            printf("um deserto ");
+            break;
+        case(2):
+            printf("uma floresta ");
+            break;
+        case(3):
+            printf("uma Planice ");
+            break;
+        case(4):
+            printf("uma masmorra ");
+            break;
+    }
+    /*  Transicao do terreno para oq o jogador encontra */
+    printf("e encontrou ");
+    switch(y)
+    {
+        case(0):
+            printf("um aldeao \n");
+            acao_npc();
+            break;
+        case(1):
+            printf("um comerciante \n");
+            acao_comerciante();
+            break;
+        case(2):
+            printf("um padre \n");
+            acao_padre();
+            break;
+        case(3):
+            printf("um ladrao \n");
+            acao_ladrao();
+            break;
+        case(4):
+            printf("um ogro \n");
+            acao_ogro();
+            break;
+    }
+    /*  Verificando se o personagem esta vivo */
+    if(x <= 0)
+    {
+        return -1;
+    }
+    else
+    {
+        return 0;
+    }
+>>>>>>> origin/gerador_aventura
 }
