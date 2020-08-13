@@ -150,7 +150,7 @@ int gerador_aventura(int x, int y)
             break;
         case(1):
             printf("um comerciante \n");
-            /* acao_comerciante();*/
+            acao_comerciante();
             break;
         case(2):
             printf("um padre \n");
@@ -226,6 +226,7 @@ void acao_comerciante(void)
             printf("uma espada por 100 moedas de ouro? \n");
             printf("1. Sim \n");
             printf("2. Nao \n");
+            printf("Opcao: ");
             scanf("%d", &op);
             setbuf(stdin, NULL);
             switch(op)
@@ -261,6 +262,7 @@ void acao_comerciante(void)
             printf("uma armadura por 80 moedas de ouro? \n");
             printf("1. Sim \n");
             printf("2. Nao \n");
+            printf("Opcao: ");
             scanf("%d", &op);
             setbuf(stdin, NULL);
             switch(op)
@@ -297,6 +299,7 @@ void acao_comerciante(void)
                     printf("um amuleto por 50 moedas de ouro? \n");
                     printf("1. Sim \n");
                     printf("2. Nao \n");
+                    printf("Opcao: ");
                     scanf("%d", &op);
                     setbuf(stdin, NULL);
                     switch(op)
