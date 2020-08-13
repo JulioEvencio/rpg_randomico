@@ -57,8 +57,17 @@ void acao_comerciante(void)
                 case(1):
                     if(personagem.ouro >= 100)
                     {
-                        printf("Hehe, volte sempre! \n");
-                        personagem.ouro = personagem.ouro - 100;
+                        if(personagem.arma == 0)
+                        {
+                            printf("Hehe, volte sempre! \n");
+                            personagem.ouro = personagem.ouro - 100;
+                            personagem.arma++;
+                        }
+                        else
+                        {
+                            printf("Voce ja esta equipado com uma espada! \n");
+                        }
+                        
                     }
                     else
                     {
@@ -81,10 +90,19 @@ void acao_comerciante(void)
             switch(op)
             {
                 case(1):
-                    if(personagem.ouro >= 100)
+                    if(personagem.ouro >= 80)
                     {
-                        printf("Haha, nos vemos em breve! \n");
-                        personagem.ouro = personagem.ouro - 100;
+                        if(personagem.armadura == 0)
+                        {
+                            printf("Haha, nos vemos em breve! \n");
+                            personagem.ouro = personagem.ouro - 80;
+                            personagem.armadura++;
+                        }
+                        else
+                        {
+                            printf("Voce ja esta equipado com uma armadura! \n");
+                        }
+                        
                     }
                     else
                     {
@@ -99,5 +117,41 @@ void acao_comerciante(void)
                     
             }
             break;
+                case(2):
+                    printf("um amuleto por 50 moedas de ouro? \n");
+                    printf("1. Sim \n");
+                    printf("2. Nao \n");
+                    scanf("%d", &op);
+                    setbuf(stdin, NULL);
+                    switch(op)
+                    {
+                        case(1):
+                            if(personagem.ouro >= 50)
+                            {
+                                if(personagem.amuleto == 0)
+                                {
+                                    printf("E bom fazer negocios com voce! \n");
+                                    personagem.ouro = personagem.ouro - 50;
+                                    personagem.amuleto++;
+                                }
+                                else
+                                {
+                                    printf("Voce ja tem um amuleto equipado! \n");
+                                }
+                                
+                            }
+                            else
+                            {
+                                printf("Voce so tem %.2f de ouro, isso nao paga nada! \n", personagem.ouro);
+                            }
+                            
+                            break;
+                        case(2):
+                            printf("OK, ate logo! \n");
+                            break;
+                            default:
+                            printf("Nao brinque comigo, quer saber? Vou embora! \n");
+                    }
+                    break;
     }
 }
