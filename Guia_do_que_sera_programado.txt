@@ -63,4 +63,10 @@ Ordem de criação das funções:
 6. Ação do comerciante
 7. Ação do padre
 8. Ação do ladrão
+<<<<<<< HEAD
 9. Ação do ogro 
+=======
+9. Ação do ogro
+
+printf("----------------------------------------- \n"); 
+>>>>>>> acao_npc

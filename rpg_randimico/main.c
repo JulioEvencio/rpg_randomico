@@ -60,6 +60,7 @@ int main()
     return 0;
 }
 
+<<<<<<< HEAD
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void)
 {
@@ -168,4 +169,27 @@ int rodar_jogo(void)
         system("pause");
     }while(loop != -1);
     return -1;
+=======
+/*  Funcao do NPC */
+void acao_npc(void)
+{
+    int x;
+    x = rand() % 2;
+    printf("----------------------------------------- \n");
+    printf("Aldeao: ");
+    switch(x)
+    {
+        case(0):
+            printf("Voce nao e bem vindo aqui \n");
+            break;
+        case(1):
+            printf("Seu fim esta proximo... \n");
+            break;
+        case(2):
+            printf("Um heroi, isso que este mundo precisa... \n");
+            break;
+    }
+    printf("----------------------------------------- \n");
+    system("pause");
+>>>>>>> acao_npc
 }
