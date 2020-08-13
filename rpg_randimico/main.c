@@ -38,9 +38,6 @@ int main()
     return 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void)
 {
@@ -53,7 +50,8 @@ int printar_menu(void)
     scanf("%d", &opcao);
     setbuf(stdin, NULL);
     return opcao;
-=======
+}
+
 /*  Funcao que recebe e verifica a opcao do usuario e a ativa */
 int verificar_opcao(int opcao)
 {
@@ -75,8 +73,8 @@ int verificar_opcao(int opcao)
             printf("Opcao invalida! \n");
             return 0;
     }
->>>>>>> origin/verificar_opcao
-=======
+}
+
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
 int gerador_aventura(int x, int y)
 {
@@ -135,8 +133,8 @@ int gerador_aventura(int x, int y)
     {
         return 0;
     }
->>>>>>> origin/gerador_aventura
-=======
+}
+
 /*  Funcao que o jogo em si vai rodar */
 int rodar_jogo(void)
 {
@@ -148,5 +146,4 @@ int rodar_jogo(void)
         system("pause");
     }while(loop != -1);
     return -1;
->>>>>>> origin/rodar_jogo
 }
