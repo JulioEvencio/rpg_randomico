@@ -4,6 +4,7 @@
 #include <time.h>
 #include <string.h>
 
+<<<<<<< HEAD
 /*  Struct dos monstros */
 typedef struct Lista_monstros
 {
@@ -25,6 +26,24 @@ strcpy(monstros[1].nome, "Ogro");
 monstros[1].ataque = 2;
 monstros[1].vida = 5;
 monstros[1].velocidade = 1;
+=======
+/*  Struct de atributos do usuario */
+typedef struct Atributos
+{
+    char nome[100];
+    int level;
+    int xp;
+    int ouro;
+    int ataque;
+    int vida_maxima;
+    int vida_atual;
+    int velocidade;
+    int arma;
+    int armadura;
+    int amuleto;
+}Atributos_base;
+Atributos_base personagem;
+>>>>>>> Estrutura_base_do_personagem_e_monstros
 
 /*  Funcoes */
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
