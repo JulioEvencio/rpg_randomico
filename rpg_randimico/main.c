@@ -146,7 +146,7 @@ int gerador_aventura(int x, int y)
     {
         case(0):
             printf("um aldeao \n");
-            /* acao_npc(); */
+            acao_npc();
             break;
         case(1):
             printf("um comerciante \n");
@@ -210,8 +210,6 @@ void acao_npc(void)
             break;
     }
     printf("----------------------------------------- \n");
-    printf("Pressione qualquer tecla para continuar... \n");
-    getchar();
 }
 
 /*  Funcao do comerciante */
