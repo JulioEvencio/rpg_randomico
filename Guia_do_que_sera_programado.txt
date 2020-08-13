@@ -1,0 +1,62 @@
+Projeto para treinar números randômicos em C.
+
+Dados de ideias base (Guia para não me perder ao programar, pois será um projeto bem complicado)
+
+Objetivo do RPG: Sobreviver 100 dias.
+
+Dados:
+Nome
+Vida
+Arma
+armadura
+escudo
+
+Atributos:
+ATK
+HP
+VEL
+
+
+Terrenos:
+1. Cidade
+2. Deserto
+3. Floresta
+4. Planice
+5. Masmorra
+
+Ações:
+1. NPC
+2. Comerciante
+3. Padre
+4. Ladrões
+5. Ogro
+
+NPC:
+1. "Frase aleatória 1"
+2. "Frase aleatória 2"
+3. "Frase aleatória 3"
+
+Comerciante:
+1. Vender espada
+2. Vender armadura
+3. Vender escudo
+
+Padre:
+1. "Frase aleatória com cura"
+1. "Frase aleatória sem cura"
+
+Ladrões:
+1. Lutar
+2. Fugir
+3. Pagar taxa
+
+Ogro:
+1. Lutar
+2. Fugir
+
+Ordem de criação das funções:
+1. Printar menu
+2. Verificar opção
+3. Rodar jogo
+4. Gerador de aventura
+5. verificar aventura
