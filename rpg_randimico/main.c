@@ -40,6 +40,7 @@ int main()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void)
 {
@@ -135,4 +136,17 @@ int gerador_aventura(int x, int y)
         return 0;
     }
 >>>>>>> origin/gerador_aventura
+=======
+/*  Funcao que o jogo em si vai rodar */
+int rodar_jogo(void)
+{
+    int loop;
+    do
+    {
+        system("cls");
+        loop = gerador_aventura(rand() % 4, rand() % 4);
+        system("pause");
+    }while(loop != -1);
+    return -1;
+>>>>>>> origin/rodar_jogo
 }
