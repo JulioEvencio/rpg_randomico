@@ -38,6 +38,7 @@ int main()
     return 0;
 }
 
+<<<<<<< HEAD
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void)
 {
@@ -50,4 +51,27 @@ int printar_menu(void)
     scanf("%d", &opcao);
     setbuf(stdin, NULL);
     return opcao;
+=======
+/*  Funcao que recebe e verifica a opcao do usuario e a ativa */
+int verificar_opcao(int opcao)
+{
+    switch(opcao)
+    {
+        case(1):
+            rodar_jogo();
+            return 0;
+            break;
+        case(2):
+            printf("Em desenvolvimento \n");
+            return 0;
+            break;
+        case(0):
+            printf("Obrigado por jogar! \n");
+            return -1;
+            break;
+        default:
+            printf("Opcao invalida! \n");
+            return 0;
+    }
+>>>>>>> origin/verificar_opcao
 }
