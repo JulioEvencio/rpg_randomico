@@ -37,3 +37,9 @@ int main()
 
     return 0;
 }
+
+/*  Funcao do ogro */
+void acao_ogro(void)
+{
+    printf("Em desenvolvimento! \n");
+}
