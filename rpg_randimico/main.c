@@ -60,11 +60,6 @@ int main()
     return 0;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void)
 {
@@ -152,7 +147,7 @@ int gerador_aventura(int x, int y)
             break;
     }
     /*  Verificando se o personagem esta vivo */
-    if(x <= 0)
+    if(x <= -1)
     {
         return -1;
     }
@@ -168,12 +163,14 @@ int rodar_jogo(void)
     int loop;
     do
     {
-        system("cls");
+        system("clear");
         loop = gerador_aventura(rand() % 4, rand() % 4);
-        system("pause");
+        printf("Pressione qualquer tecla para continuar... \n");
+        getchar();
     }while(loop != -1);
     return -1;
-=======
+}
+
 /*  Funcao do NPC */
 void acao_npc(void)
 {
@@ -194,9 +191,10 @@ void acao_npc(void)
             break;
     }
     printf("----------------------------------------- \n");
-    system("pause");
->>>>>>> acao_npc
-=======
+    printf("Pressione qualquer tecla para continuar... \n");
+    getchar();
+}
+
 /*  Funcao do comerciante */
 void acao_comerciante(void)
 {
@@ -315,9 +313,8 @@ void acao_comerciante(void)
                     }
                     break;
     }
->>>>>>> acao_comerciante
 }
-=======
+
 /*  Funcao do padre */
 void acao_padre(void)
 {
@@ -333,18 +330,15 @@ void acao_padre(void)
     }
     
 }
->>>>>>> acao_padre
-=======
+
 /*  Funcao do ladrao */
 void acao_ladrao(void)
 {
     printf("Em desenvolvimento! \n");
 }
->>>>>>> acao_ladrao
-=======
+
 /*  Funcao do ogro */
 void acao_ogro(void)
 {
     printf("Em desenvolvimento! \n");
 }
->>>>>>> acao_ogro
