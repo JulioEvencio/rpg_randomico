@@ -27,6 +27,8 @@ void acao_ogro(void);
 void resetar_personagem(void);
 /*  Funcao que aumenta os atributos dos personagem de acordo com seu level */
 void aumentar_atributos(void);
+/*  Funcao responsavel pelo sistema de luta do jogo */
+void inicar_luta(void);
 
 /*  Funcao main */
 int main()
