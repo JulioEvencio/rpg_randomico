@@ -37,3 +37,9 @@ int main()
 
     return 0;
 }
+
+/*  Funcao do ladrao */
+void acao_ladrao(void)
+{
+    printf("Em desenvolvimento! \n");
+}
