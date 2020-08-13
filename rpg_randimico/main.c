@@ -154,7 +154,7 @@ int gerador_aventura(int x, int y)
             break;
         case(2):
             printf("um padre \n");
-            /* acao_padre(); */
+            acao_padre();
             break;
         case(3):
             printf("um ladrao \n");
@@ -333,11 +333,13 @@ void acao_comerciante(void)
                     }
                     break;
     }
+    printf("----------------------------------------- \n");
 }
 
 /*  Funcao do padre */
 void acao_padre(void)
 {
+    printf("----------------------------------------- \n");
     printf("Padre: ");
     if(personagem.vida_atual != personagem.vida_maxima)
     {
@@ -348,6 +350,7 @@ void acao_padre(void)
     {
         printf("Cuidado com os monstros desse mundo! \n");
     }
+    printf("----------------------------------------- \n");
     
 }
 
