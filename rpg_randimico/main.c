@@ -63,6 +63,7 @@ int main()
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void)
 {
@@ -332,3 +333,10 @@ void acao_padre(void)
     
 }
 >>>>>>> acao_padre
+=======
+/*  Funcao do ladrao */
+void acao_ladrao(void)
+{
+    printf("Em desenvolvimento! \n");
+}
+>>>>>>> acao_ladrao
