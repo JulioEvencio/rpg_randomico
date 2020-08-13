@@ -4,7 +4,6 @@
 #include <time.h>
 #include <string.h>
 
-<<<<<<< HEAD
 /*  Struct dos monstros */
 typedef struct Lista_monstros
 {
@@ -17,16 +16,9 @@ Base_monstros monstros[2];
 
 /*  Lista de monstros */
 /*  Ladrao */
-strcpy(monstros[0].nome, "Ladrao");
-monstros[0].ataque = 3;
-monstros[0].vida = 3;
-monstros[0].velocidade = 3;
+
 /*  Ogro */
-strcpy(monstros[1].nome, "Ogro");
-monstros[1].ataque = 2;
-monstros[1].vida = 5;
-monstros[1].velocidade = 1;
-=======
+
 /*  Struct de atributos do usuario */
 typedef struct Atributos
 {
@@ -43,7 +35,6 @@ typedef struct Atributos
     int amuleto;
 }Atributos_base;
 Atributos_base personagem;
->>>>>>> Estrutura_base_do_personagem_e_monstros
 
 /*  Funcoes */
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
@@ -320,7 +311,7 @@ void acao_comerciante(void)
                             }
                             else
                             {
-                                printf("Voce so tem %.2f de ouro, isso nao paga nada! \n", personagem.ouro);
+                                printf("Voce so tem %d de ouro, isso nao paga nada! \n", personagem.ouro);
                             }
                             
                             break;
