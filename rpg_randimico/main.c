@@ -158,11 +158,11 @@ int gerador_aventura(int x, int y)
             break;
         case(3):
             printf("um ladrao \n");
-            /* acao_ladrao(); */
+            acao_ladrao();
             break;
         case(4):
             printf("um ogro \n");
-            /* acao_ogro(); */
+            acao_ogro();
             break;
     }
     /*  Verificando se o personagem esta vivo */
@@ -357,11 +357,15 @@ void acao_padre(void)
 /*  Funcao do ladrao */
 void acao_ladrao(void)
 {
+    printf("----------------------------------------- \n");
     printf("Em desenvolvimento! \n");
+    printf("----------------------------------------- \n");
 }
 
 /*  Funcao do ogro */
 void acao_ogro(void)
 {
+    printf("----------------------------------------- \n");
     printf("Em desenvolvimento! \n");
+    printf("----------------------------------------- \n");
 }
