@@ -180,10 +180,14 @@ int gerador_aventura(int x, int y)
 int rodar_jogo(void)
 {
     int loop;
+    resetar_personagem();
     do
     {
         system("clear");
-        loop = gerador_aventura(rand() % 4, rand() % 4);
+        printf("Nome: %s \n", personagem.nome);
+        printf("Level: %d \n", personagem.level);
+        printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
+        loop = gerador_aventura(rand() % 5, rand() % 5);
         printf("Pressione qualquer tecla para continuar... \n");
         getchar();
     }while(loop != -1);
@@ -194,7 +198,7 @@ int rodar_jogo(void)
 void acao_npc(void)
 {
     int x;
-    x = rand() % 2;
+    x = rand() % 3;
     printf("----------------------------------------- \n");
     printf("Aldeao: ");
     switch(x)
@@ -368,4 +372,20 @@ void acao_ogro(void)
     printf("----------------------------------------- \n");
     printf("Em desenvolvimento! \n");
     printf("----------------------------------------- \n");
+}
+
+/*  Funcao que reseta o personagem */
+void resetar_personagem(void)
+{
+    strcpy(personagem.nome, " ");
+    personagem.level = 1;
+    personagem.xp = 0;
+    personagem.ouro = 0;
+    personagem.ataque = 5;
+    personagem.vida_maxima = 20;
+    personagem.vida_atual = personagem.vida_maxima;
+    personagem.velocidade = 5;
+    personagem.arma = 0;
+    personagem.armadura = 0;
+    personagem.amuleto = 0;
 }
