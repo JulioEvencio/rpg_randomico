@@ -67,6 +67,16 @@ int main()
 {
     /*  Variaveis */
     int loop;
+    /*  Criando semente para a funcao rand */
+    srand(time(NULL));
+    /*  Limpamdo tela antes de iniciar */
+    system("clear");
+    /*  Registro do usuario */
+    printf("Bem vindo ao RPG Randomico! \n");
+    printf("Qual e seu nome de aventureiro? \n");
+    printf("Nome: ");
+    fgets(personagem.nome, 100, stdin);
+    setbuf(stdin, NULL);
     /*  Loop do menu do jogo */
     do
     {
@@ -184,7 +194,7 @@ int rodar_jogo(void)
     do
     {
         system("clear");
-        printf("Nome: %s \n", personagem.nome);
+        printf("Nome: %s", personagem.nome);
         printf("Level: %d \n", personagem.level);
         printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
         loop = gerador_aventura(rand() % 5, rand() % 5);
@@ -377,7 +387,6 @@ void acao_ogro(void)
 /*  Funcao que reseta o personagem */
 void resetar_personagem(void)
 {
-    strcpy(personagem.nome, " ");
     personagem.level = 1;
     personagem.xp = 0;
     personagem.ouro = 0;
