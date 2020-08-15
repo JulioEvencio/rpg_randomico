@@ -9,15 +9,11 @@ typedef struct Lista_monstros
 {
     char nome[100];
     int ataque;
-    int vida;
+    int vida_maxima;
+    int vida_atual;
     int velocidade;
 }Base_monstros;
 Base_monstros monstros[2];
-
-/*  Lista de monstros */
-/*  Ladrao */
-
-/*  Ogro */
 
 /*  Struct de atributos do usuario */
 typedef struct Atributos
@@ -61,6 +57,8 @@ void resetar_personagem(void);
 void aumentar_atributos(void);
 /*  Funcao responsavel pelo sistema de luta do jogo */
 void inicar_luta(void);
+/*  Funcao que gera os inimigos */
+void gerar_inimigos(void);
 
 /*  Funcao main */
 int main()
@@ -191,6 +189,7 @@ int rodar_jogo(void)
 {
     int loop;
     resetar_personagem();
+    gerar_inimigos();
     do
     {
         system("clear");
@@ -397,4 +396,22 @@ void resetar_personagem(void)
     personagem.arma = 0;
     personagem.armadura = 0;
     personagem.amuleto = 0;
+}
+
+/*  Funcao que gera os inimigos */
+void gerar_inimigos(void)
+{
+    /*  Lista de monstros */
+    /*  Ladrao */
+    strcpy(monstros[0].nome, "Ladrao");
+    monstros[0].ataque = 3;
+    monstros[0].vida_maxima = 10;
+    monstros[0].vida_atual = monstros[0].vida_maxima;
+    monstros[0].velocidade = 3;
+    /*  Ogro */
+    strcpy(monstros[1].nome, "Ogro");
+    monstros[1].ataque = 2;
+    monstros[1].vida_maxima = 15;
+    monstros[1].vida_atual = monstros[1].vida_maxima;
+    monstros[1].velocidade = 1;
 }
