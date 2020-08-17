@@ -357,17 +357,13 @@ void acao_padre(void)
 /*  Funcao do ladrao */
 void acao_ladrao(void)
 {
-    printf("----------------------------------------- \n");
-    printf("Em desenvolvimento! \n");
-    printf("----------------------------------------- \n");
+    iniciar_luta(0);
 }
 
 /*  Funcao do ogro */
 void acao_ogro(void)
 {
-    printf("----------------------------------------- \n");
-    printf("Em desenvolvimento! \n");
-    printf("----------------------------------------- \n");
+    iniciar_luta(1);
 }
 
 /*  Funcao responsavel pelo sistema de luta do jogo */
@@ -406,12 +402,12 @@ void inicar_luta(int x)
                 atacar_inimigo(x);
                 if(monstros[x].vida_atual <= 0)
                 {
-                    loop = -1
+                    loop = -1;
                 }
             }
             else
             {
-                loop = -1
+                loop = -1;
             }
             
         }
