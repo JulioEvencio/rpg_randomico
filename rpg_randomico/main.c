@@ -65,6 +65,8 @@ void atacar_personagem(int x);
 void criar_inimigos(void);
 /*  Funcao que gera os inimigos */
 void gerar_inimigos(void);
+/*  Funcao que adiciona ouro ao personagem */
+void adicionar_ouro(void);
 
 /*  Funcao main */
 int main()
@@ -201,6 +203,7 @@ int rodar_jogo(void)
         system("clear");
         printf("Nome: %s", personagem.nome);
         printf("Level: %d \n", personagem.level);
+        printf("Ouro: %d \n", personagem.ouro);
         printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
         loop = gerador_aventura(rand() % 5, rand() % 5);
         printf("Pressione qualquer tecla para continuar... \n");
@@ -225,7 +228,7 @@ void acao_npc(void)
             printf("Seu fim esta proximo... \n");
             break;
         case(2):
-            printf("Um heroi, isso que este mundo precisa... \n");
+            printf("Um heroi! isso que este mundo precisa... \n");
             break;
     }
     printf("----------------------------------------- \n");
@@ -389,9 +392,14 @@ void acao_ogro(void)
 void iniciar_luta(int x)
 {
     int loop = 1;
+    gerar_inimigos();
+    printf("Pressione qualquer tecla para continuar... \n");
+    getchar();
     do
     {
         system("clear");
+        printf("Inimigo: %s \n", monstros[x].nome);
+        printf("Vida: %3d / %3d \n", monstros[x].vida_atual, monstros[x].vida_maxima);
         if(personagem.velocidade >= monstros[x].velocidade)
         {
             atacar_inimigo(x);
@@ -409,6 +417,7 @@ void iniciar_luta(int x)
             else
             {
                 printf("O inimigo morreu... \n");
+                adicionar_ouro();
                 loop = -1;
             }
             
@@ -424,6 +433,7 @@ void iniciar_luta(int x)
                 if(monstros[x].vida_atual <= 0)
                 {
                     printf("O inimigo morreu... \n");
+                    adicionar_ouro();
                     loop = -1;
                 }
             }
@@ -451,7 +461,7 @@ void atacar_inimigo(int x)
 /*  Funcao do ataque dos monstros */
 void atacar_personagem(int x)
 {
-    printf("O inimigo atacou! \n");
+    printf("O inimigo atacou voce! \n");
     personagem.vida_atual = personagem.vida_atual - monstros[x].ataque;
 }
 
@@ -486,4 +496,13 @@ void gerar_inimigos(void)
     monstros[1].vida_maxima = 15;
     monstros[1].vida_atual = monstros[1].vida_maxima;
     monstros[1].velocidade = 1;
+}
+
+/*  Funcao que adiciona ouro ao personagem */
+void adicionar_ouro(void)
+{
+    int x;
+    x = (rand() % 6) + 1;
+    personagem.ouro = personagem.ouro + x;
+    printf("Voce ganhou %d moedas de ouro! \n", x);
 }
