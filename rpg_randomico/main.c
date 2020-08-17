@@ -9,13 +9,8 @@ typedef struct Lista_monstros
 {
     char nome[100];
     int ataque;
-<<<<<<< HEAD:rpg_randimico/main.c
     int vida_atual;
     int vida_maxima;
-=======
-    int vida_maxima;
-    int vida_atual;
->>>>>>> master:rpg_randomico/main.c
     int velocidade;
 }Base_monstros;
 Base_monstros monstros[2];
@@ -61,19 +56,15 @@ void resetar_personagem(void);
 /*  Funcao que aumenta os atributos dos personagem de acordo com seu level */
 void aumentar_atributos(void);
 /*  Funcao responsavel pelo sistema de luta do jogo */
-<<<<<<< HEAD:rpg_randimico/main.c
-void inicar_luta(int x);
+void iniciar_luta(int x);
 /*  Funcao do ataque do personagem */
 void atacar_inimigo(int x);
 /*  Funcao do ataque dos monstros */
 void atacar_personagem(int x);
 /*  Funcao que cria os inimigos */
 void criar_inimigos(void);
-=======
-void inicar_luta(void);
 /*  Funcao que gera os inimigos */
 void gerar_inimigos(void);
->>>>>>> master:rpg_randomico/main.c
 
 /*  Funcao main */
 int main()
@@ -189,7 +180,7 @@ int gerador_aventura(int x, int y)
             break;
     }
     /*  Verificando se o personagem esta vivo */
-    if(x <= -1)
+    if(personagem.vida_atual <= 0)
     {
         return -1;
     }
@@ -391,12 +382,11 @@ void acao_ladrao(void)
 /*  Funcao do ogro */
 void acao_ogro(void)
 {
-<<<<<<< HEAD:rpg_randimico/main.c
     iniciar_luta(1);
 }
 
 /*  Funcao responsavel pelo sistema de luta do jogo */
-void inicar_luta(int x)
+void iniciar_luta(int x)
 {
     int loop = 1;
     do
@@ -412,11 +402,13 @@ void inicar_luta(int x)
                 atacar_personagem(x);
                 if(personagem.vida_atual <= 0)
                 {
+                    printf("Voce morreu... \n");
                     loop = -1;
                 }
             }
             else
             {
+                printf("O inimigo morreu... \n");
                 loop = -1;
             }
             
@@ -431,11 +423,13 @@ void inicar_luta(int x)
                 atacar_inimigo(x);
                 if(monstros[x].vida_atual <= 0)
                 {
+                    printf("O inimigo morreu... \n");
                     loop = -1;
                 }
             }
             else
             {
+                printf("Voce morreu... \n");
                 loop = -1;
             }
             
@@ -459,10 +453,6 @@ void atacar_personagem(int x)
 {
     printf("O inimigo atacou! \n");
     personagem.vida_atual = personagem.vida_atual - monstros[x].ataque;
-=======
-    printf("----------------------------------------- \n");
-    printf("Em desenvolvimento! \n");
-    printf("----------------------------------------- \n");
 }
 
 /*  Funcao que reseta o personagem */
@@ -496,5 +486,4 @@ void gerar_inimigos(void)
     monstros[1].vida_maxima = 15;
     monstros[1].vida_atual = monstros[1].vida_maxima;
     monstros[1].velocidade = 1;
->>>>>>> master:rpg_randomico/main.c
 }
