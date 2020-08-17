@@ -9,15 +9,11 @@ typedef struct Lista_monstros
 {
     char nome[100];
     int ataque;
-    int vida;
+    int vida_atual;
+    int vida_maxima;
     int velocidade;
 }Base_monstros;
 Base_monstros monstros[2];
-
-/*  Lista de monstros */
-/*  Ladrao */
-
-/*  Ogro */
 
 /*  Struct de atributos do usuario */
 typedef struct Atributos
@@ -60,7 +56,11 @@ void resetar_personagem(void);
 /*  Funcao que aumenta os atributos dos personagem de acordo com seu level */
 void aumentar_atributos(void);
 /*  Funcao responsavel pelo sistema de luta do jogo */
-void inicar_luta(void);
+void inicar_luta(int x);
+/*  Funcao do ataque do personagem */
+void atacar_inimigo(int x);
+/*  Funcao do ataque dos monstros */
+void atacar_personagem(int x);
 
 /*  Funcao main */
 int main()
@@ -368,4 +368,70 @@ void acao_ogro(void)
     printf("----------------------------------------- \n");
     printf("Em desenvolvimento! \n");
     printf("----------------------------------------- \n");
+}
+
+/*  Funcao responsavel pelo sistema de luta do jogo */
+void inicar_luta(int x)
+{
+    int loop = 1;
+    do
+    {
+        system("clear");
+        if(personagem.velocidade >= monstros[x].velocidade)
+        {
+            atacar_inimigo(x);
+            printf("Pressione qualquer tecla para continuar... \n");
+            getchar();
+            if(monstros[x].vida_atual > 0)
+            {
+                atacar_personagem(x);
+                if(personagem.vida_atual <= 0)
+                {
+                    loop = -1;
+                }
+            }
+            else
+            {
+                loop = -1;
+            }
+            
+        }
+        else
+        {
+            atacar_personagem(x);
+            printf("Pressione qualquer tecla para continuar... \n");
+            getchar();
+            if(personagem.vida_atual > 0)
+            {
+                atacar_inimigo(x);
+                if(monstros[x].vida_atual <= 0)
+                {
+                    loop = -1
+                }
+            }
+            else
+            {
+                loop = -1
+            }
+            
+        }
+        printf("Pressione qualquer telca para continuar... \n");
+        getchar();
+        
+    } while (loop != -1);
+    
+}
+
+/*  Funcao do ataque do personagem */
+void atacar_inimigo(int x)
+{
+    printf("Voce atacou o inimigo! \n");
+    monstros[x].vida_atual = monstros[x].vida_atual - personagem.ataque;
+}
+
+/*  Funcao do ataque dos monstros */
+void atacar_personagem(int x)
+{
+    printf("O inimigo atacou! \n");
+    personagem.vida_atual = personagem.vida_atual - monstros[x].ataque;
 }
