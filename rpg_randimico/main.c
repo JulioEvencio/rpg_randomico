@@ -61,6 +61,8 @@ void inicar_luta(int x);
 void atacar_inimigo(int x);
 /*  Funcao do ataque dos monstros */
 void atacar_personagem(int x);
+/*  Funcao que cria os inimigos */
+void criar_inimigos(void);
 
 /*  Funcao main */
 int main()
