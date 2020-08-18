@@ -204,7 +204,7 @@ int rodar_jogo(void)
         system("clear");
         printar_estatisticas();
         loop = gerador_aventura(rand() % 5, rand() % 5);
-        printf("Pressione qualquer tecla para continuar... \n");
+        printf("Pressione enter para continuar... \n");
         getchar();
         personagem.dia++;
     }while(loop != -1);
