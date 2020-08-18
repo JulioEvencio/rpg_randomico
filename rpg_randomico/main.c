@@ -66,6 +66,8 @@ void gerar_inimigos(void);
 void adicionar_ouro(void);
 /*  Funcao que printa as estatisticas do usuario */
 void printar_estatisticas(void);
+/*  Funcao que controla os print das estatisticas durante a luta */
+void controlar_dados(int x);
 
 /*  Funcao main */
 int main()
@@ -394,11 +396,9 @@ void iniciar_luta(int x)
     getchar();
     do
     {
-        system("clear");
-        printar_estatisticas();
-        printf("\n--------------------------\n");
-        printf("Inimigo: %s \n", monstros[x].nome);
-        printf("Vida: %3d / %3d \n", monstros[x].vida_atual, monstros[x].vida_maxima);
+        controlar_dados(x);
+        printf("Pressione enter para iniciar o combate... \n");
+        getchar();
         if(personagem.velocidade >= monstros[x].velocidade)
         {
             atacar_inimigo(x);
@@ -453,15 +453,17 @@ void iniciar_luta(int x)
 /*  Funcao do ataque do personagem */
 void atacar_inimigo(int x)
 {
-    printf("Voce atacou o inimigo! \n");
     monstros[x].vida_atual = monstros[x].vida_atual - personagem.ataque;
+    controlar_dados(x);
+    printf("Voce atacou o inimigo e causou %d de dano! \n", personagem.ataque);
 }
 
 /*  Funcao do ataque dos monstros */
 void atacar_personagem(int x)
 {
-    printf("O inimigo atacou voce! \n");
     personagem.vida_atual = personagem.vida_atual - monstros[x].ataque;
+    controlar_dados(x);
+    printf("O inimigo atacou voce e causou %d de dano! \n", monstros[x].ataque);
 }
 
 /*  Funcao que reseta o personagem */
@@ -512,4 +514,14 @@ void printar_estatisticas(void)
     printf("Dia:  %d \n", personagem.dia);
     printf("Ouro: %d \n", personagem.ouro);
     printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
+}
+
+/*  Funcao que controla os print das estatisticas durante a luta */
+void controlar_dados(int x)
+{
+    system("clear");
+    printar_estatisticas();
+    printf("\n--------------------------\n");
+    printf("Inimigo: %s \n", monstros[x].nome);
+    printf("Vida: %3d / %3d \n", monstros[x].vida_atual, monstros[x].vida_maxima);
 }
