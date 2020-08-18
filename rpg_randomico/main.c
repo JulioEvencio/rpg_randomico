@@ -237,7 +237,7 @@ void acao_npc(void)
 void acao_comerciante(void)
 {
     int x, op;
-    x = rand() % 2;
+    x = rand() % 3;
     printf("----------------------------------------- \n");
     printf("Comerciante: Bem vindo aventureiro! \n");
     printf("Gostaria de comprar ");
@@ -260,6 +260,7 @@ void acao_comerciante(void)
                             printf("Hehe, volte sempre! \n");
                             personagem.ouro = personagem.ouro - 100;
                             personagem.arma++;
+                            personagem.ataque = personagem.ataque + 1;
                         }
                         else
                         {
@@ -296,6 +297,7 @@ void acao_comerciante(void)
                             printf("Haha, nos vemos em breve! \n");
                             personagem.ouro = personagem.ouro - 80;
                             personagem.armadura++;
+                            personagem.vida_maxima = personagem.vida_maxima + 5;
                         }
                         else
                         {
@@ -333,6 +335,7 @@ void acao_comerciante(void)
                                     printf("E bom fazer negocios com voce! \n");
                                     personagem.ouro = personagem.ouro - 50;
                                     personagem.amuleto++;
+                                    personagem.velocidade = personagem.velocidade + 3;
                                 }
                                 else
                                 {
@@ -469,11 +472,11 @@ void atacar_personagem(int x)
 void resetar_personagem(void)
 {
     personagem.dia = 1;
-    personagem.ouro = 0;
+    personagem.ouro = 500;
     personagem.ataque = 5;
     personagem.vida_maxima = 20;
     personagem.vida_atual = personagem.vida_maxima;
-    personagem.velocidade = 5;
+    personagem.velocidade = 3;
     personagem.arma = 0;
     personagem.armadura = 0;
     personagem.amuleto = 0;
