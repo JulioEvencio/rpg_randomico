@@ -392,18 +392,17 @@ void iniciar_luta(int x)
 {
     int loop = 1;
     gerar_inimigos();
-    printf("Pressione qualquer tecla para continuar... \n");
+    printf("Pressione enter para continuar... \n");
+    getchar();
+    controlar_dados(x);
+    printf("Pressione enter para iniciar o combate... \n");
     getchar();
     do
     {
         controlar_dados(x);
-        printf("Pressione enter para iniciar o combate... \n");
-        getchar();
         if(personagem.velocidade >= monstros[x].velocidade)
         {
             atacar_inimigo(x);
-            printf("Pressione qualquer tecla para continuar... \n");
-            getchar();
             if(monstros[x].vida_atual > 0)
             {
                 atacar_personagem(x);
@@ -424,8 +423,6 @@ void iniciar_luta(int x)
         else
         {
             atacar_personagem(x);
-            printf("Pressione qualquer tecla para continuar... \n");
-            getchar();
             if(personagem.vida_atual > 0)
             {
                 atacar_inimigo(x);
@@ -443,8 +440,6 @@ void iniciar_luta(int x)
             }
             
         }
-        printf("Pressione qualquer telca para continuar... \n");
-        getchar();
         
     } while (loop != -1);
     
@@ -456,6 +451,8 @@ void atacar_inimigo(int x)
     monstros[x].vida_atual = monstros[x].vida_atual - personagem.ataque;
     controlar_dados(x);
     printf("Voce atacou o inimigo e causou %d de dano! \n", personagem.ataque);
+    printf("Pressione enter para continuar... \n");
+    getchar();
 }
 
 /*  Funcao do ataque dos monstros */
@@ -464,6 +461,8 @@ void atacar_personagem(int x)
     personagem.vida_atual = personagem.vida_atual - monstros[x].ataque;
     controlar_dados(x);
     printf("O inimigo atacou voce e causou %d de dano! \n", monstros[x].ataque);
+    printf("Pressione enter para continuar... \n");
+    getchar();
 }
 
 /*  Funcao que reseta o personagem */
@@ -510,9 +509,9 @@ void adicionar_ouro(void)
 /*  Funcao que printa as estatisticas do usuario */
 void printar_estatisticas(void)
 {
-    printf("Nome: %s", personagem.nome);
-    printf("Dia:  %d \n", personagem.dia);
-    printf("Ouro: %d \n", personagem.ouro);
+    printf("Nome:   %s", personagem.nome);
+    printf("Dia:    %d \n", personagem.dia);
+    printf("Ouro:   %d \n", personagem.ouro);
     printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
 }
 
@@ -520,8 +519,10 @@ void printar_estatisticas(void)
 void controlar_dados(int x)
 {
     system("clear");
+    printf("--------------------------\n");
     printar_estatisticas();
-    printf("\n--------------------------\n");
+    printf("--------------------------\n");
     printf("Inimigo: %s \n", monstros[x].nome);
     printf("Vida: %3d / %3d \n", monstros[x].vida_atual, monstros[x].vida_maxima);
+    printf("--------------------------\n");
 }
