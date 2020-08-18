@@ -19,8 +19,7 @@ Base_monstros monstros[2];
 typedef struct Atributos
 {
     char nome[100];
-    int level;
-    int xp;
+    int dia;
     int ouro;
     int ataque;
     int vida_maxima;
@@ -53,8 +52,6 @@ void acao_ladrao(void);
 void acao_ogro(void);
 /*  Funcao que reseta o personagem */
 void resetar_personagem(void);
-/*  Funcao que aumenta os atributos dos personagem de acordo com seu level */
-void aumentar_atributos(void);
 /*  Funcao responsavel pelo sistema de luta do jogo */
 void iniciar_luta(int x);
 /*  Funcao do ataque do personagem */
@@ -67,6 +64,8 @@ void criar_inimigos(void);
 void gerar_inimigos(void);
 /*  Funcao que adiciona ouro ao personagem */
 void adicionar_ouro(void);
+/*  Funcao que printa as estatisticas do usuario */
+void printar_estatisticas(void);
 
 /*  Funcao main */
 int main()
@@ -201,13 +200,11 @@ int rodar_jogo(void)
     do
     {
         system("clear");
-        printf("Nome: %s", personagem.nome);
-        printf("Level: %d \n", personagem.level);
-        printf("Ouro: %d \n", personagem.ouro);
-        printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
+        printar_estatisticas();
         loop = gerador_aventura(rand() % 5, rand() % 5);
         printf("Pressione qualquer tecla para continuar... \n");
         getchar();
+        personagem.dia++;
     }while(loop != -1);
     return -1;
 }
@@ -398,6 +395,8 @@ void iniciar_luta(int x)
     do
     {
         system("clear");
+        printar_estatisticas();
+        printf("\n--------------------------\n");
         printf("Inimigo: %s \n", monstros[x].nome);
         printf("Vida: %3d / %3d \n", monstros[x].vida_atual, monstros[x].vida_maxima);
         if(personagem.velocidade >= monstros[x].velocidade)
@@ -468,8 +467,7 @@ void atacar_personagem(int x)
 /*  Funcao que reseta o personagem */
 void resetar_personagem(void)
 {
-    personagem.level = 1;
-    personagem.xp = 0;
+    personagem.dia = 1;
     personagem.ouro = 0;
     personagem.ataque = 5;
     personagem.vida_maxima = 20;
@@ -505,4 +503,13 @@ void adicionar_ouro(void)
     x = (rand() % 6) + 1;
     personagem.ouro = personagem.ouro + x;
     printf("Voce ganhou %d moedas de ouro! \n", x);
+}
+
+/*  Funcao que printa as estatisticas do usuario */
+void printar_estatisticas(void)
+{
+    printf("Nome: %s", personagem.nome);
+    printf("Dia:  %d \n", personagem.dia);
+    printf("Ouro: %d \n", personagem.ouro);
+    printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
 }
