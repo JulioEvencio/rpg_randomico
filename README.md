@@ -53,6 +53,12 @@ Um personagem não jogável é um personagem de jogo eletrônico que não pode s
 
 O aldeão é um *NPC* que fala frases aleatórias, não deve se procupar muito com ele, apenas o ignore...
 
+### Padre
+
+![Captura de tela de 2020-08-18 22-17-10](https://user-images.githubusercontent.com/65574850/90581099-cf783500-e1a0-11ea-9a4f-6dda5e4a1766.png)
+
+O Padre é um NPC capaz de curar o jogador. Um jogador ferido que encontra um padre ficará com a vida cheia. O padre é o único capaz de curar o jogador
+
 ### Comerciante
 
 ![img4](https://user-images.githubusercontent.com/65574850/90577742-085fdc00-e198-11ea-8591-bcd877f791d1.png)
