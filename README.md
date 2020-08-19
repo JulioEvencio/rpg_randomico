@@ -42,22 +42,34 @@ Aqui é o menu do jogo, através dele é possível navegar entre o jogo em si e 
 O jogo tem um sistema de rank (recorde) muito simples, ele apenas mostra qual foi a quantidades de dias máximos que o jogador sobreviveu. Dependendo da quantidade
 de dias o jogo exibirá uma frase diferente.
 
-### Comerciante
-
-![img4](https://user-images.githubusercontent.com/65574850/90577742-085fdc00-e198-11ea-8591-bcd877f791d1.png)
-	
-O comerciante é um NPC que vende itens para p jogador ficar mais forte, mas não podemos comprar o que queremos, tudo depende da sorte!
-
-![img7](https://user-images.githubusercontent.com/65574850/90577788-20376000-e198-11ea-8ea8-5a52889d92b0.png)
-
 ### Aldeão
 
 ![img6](https://user-images.githubusercontent.com/65574850/90577777-17468e80-e198-11ea-891e-3ce83d401b96.png)
 
-O aldeão é um *NPC* que fala frases aleatórias, não deve se procupar muito com eles, apenas os ignorem...
+O aldeão é um *NPC* que fala frases aleatórias, não deve se procupar muito com ele, apenas os ignorem...
+
+### Comerciante
+
+![img4](https://user-images.githubusercontent.com/65574850/90577742-085fdc00-e198-11ea-8591-bcd877f791d1.png)
+	
+O comerciante é um NPC que vende itens para o jogador ficar mais forte, mas não podemos comprar o que queremos, tudo depende da sorte!
+
+![img7](https://user-images.githubusercontent.com/65574850/90577788-20376000-e198-11ea-8ea8-5a52889d92b0.png)
 
 ### Luta
 
 ![img8](https://user-images.githubusercontent.com/65574850/90577811-288f9b00-e198-11ea-9a19-4ace4f058387.png)
+
+O jogo conta com um sistema de luta que é usado quando o jogador tem azar e encontra um ladrão ou um ogro.
+
+**NPCs Hostis**
+
+O ladrão e o ogro são NPCs hostis e por isso eles tentarão matar o jogador sempre.
+
+**Sistema de luta**
+
+O sistema de lutar é baseado por turnos, isto é, primeiro alguém ataca e depois é a vez do outro. Não há nada de muito complexo, pois não há defesa neste programa
+e por isso o ataque é subtraido diretamente da vida do oponente e assim quem fica com a vida 0 primeiro perde o combate. É importante saber que depois da luta a
+vida do jogador não é restaurada.
 
 ![img5](https://user-images.githubusercontent.com/65574850/90577760-0f86ea00-e198-11ea-9595-84faeb91b92d.png)
