@@ -86,3 +86,6 @@ e por isso o ataque é subtraido diretamente da vida do oponente e assim quem fi
 vida do jogador não é restaurada.
 
 ![img5](https://user-images.githubusercontent.com/65574850/90577760-0f86ea00-e198-11ea-9595-84faeb91b92d.png)
+
+
+***Boa Sorte! Você vai precisar...***
