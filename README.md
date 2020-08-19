@@ -46,7 +46,12 @@ de dias o jogo exibirá uma frase diferente.
 
 ![img6](https://user-images.githubusercontent.com/65574850/90577777-17468e80-e198-11ea-891e-3ce83d401b96.png)
 
-O aldeão é um *NPC* que fala frases aleatórias, não deve se procupar muito com ele, apenas os ignorem...
+**NPC**
+
+Um personagem não jogável é um personagem de jogo eletrônico que não pode ser controlado por um jogador. NPCs fazem parte da história e cenário do jogo, podendo o usuário interagir com eles para completar missões, comprar, vender itens ou conhecer sobre a história do ambiente
+*fonte: Wikipedia*
+
+O aldeão é um *NPC* que fala frases aleatórias, não deve se procupar muito com ele, apenas o ignore...
 
 ### Comerciante
 
