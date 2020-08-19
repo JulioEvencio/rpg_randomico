@@ -9,12 +9,15 @@ Este programa é um *RPG* randômico baseado em texto.
 Neste programa o RPG é *solo*, *randômico* e *baseado em texto*.
 
 **RPG Solo**
+
 É um RPG solo pois há apenas uma pessoa jogando ele.
 
 **Randômico**
+
 É randômico pois tudo o que ocorre é de forma aleatória.
 
 **Baseado em texto**
+
 É baseado em texto pois não há uma interface gráfica, isto é, todas as ações são mostradas para o usuário via texto.
 
 Imagem 1:
