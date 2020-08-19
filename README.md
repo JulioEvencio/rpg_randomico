@@ -42,6 +42,8 @@ Aqui é o menu do jogo, através dele é possível navegar entre o jogo em si e 
 O jogo tem um sistema de rank (recorde) muito simples, ele apenas mostra qual foi a quantidades de dias máximos que o jogador sobreviveu. Dependendo da quantidade
 de dias o jogo exibirá uma frase diferente.
 
+*Há uma frase especial para os que conseguirem sobreviver por mais de 1000 dias!*
+
 ### Aldeão
 
 ![img6](https://user-images.githubusercontent.com/65574850/90577777-17468e80-e198-11ea-891e-3ce83d401b96.png)
