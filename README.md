@@ -35,10 +35,17 @@ Ao entrar no jogo, o programa pedirá um nome para ser usado na aventura.
 
 Aqui é o menu do jogo, através dele é possível navegar entre o jogo em si e o rank (são as únicas opções no momento).
 
-### Comerciante
+### Rank
 
 ![img3](https://user-images.githubusercontent.com/65574850/90577721-ff6f0a80-e197-11ea-8c6f-ee6cbf32ba15.png)
 
+O jogo tem um sistema de rank (recorde) muito simples, ele apenas mostra qual foi a quantidades de dias máximos que o jogador sobreviveu. Dependendo da quantidade
+de dias o jogo exibirá uma frase diferente.
+
+### Comerciante
+
+![img4](https://user-images.githubusercontent.com/65574850/90577742-085fdc00-e198-11ea-8591-bcd877f791d1.png)
+	
 O comerciante é um NPC que vende itens para p jogador ficar mais forte, mas não podemos comprar o que queremos, tudo depende da sorte!
 
 ![img7](https://user-images.githubusercontent.com/65574850/90577788-20376000-e198-11ea-8ea8-5a52889d92b0.png)
@@ -51,10 +58,6 @@ O aldeão é um *NPC* que fala frases aleatórias, não deve se procupar muito c
 
 ### Luta
 
-![img4](https://user-images.githubusercontent.com/65574850/90577742-085fdc00-e198-11ea-8591-bcd877f791d1.png)
-
 ![img8](https://user-images.githubusercontent.com/65574850/90577811-288f9b00-e198-11ea-9a19-4ace4f058387.png)
-
-Imagem 5:
 
 ![img5](https://user-images.githubusercontent.com/65574850/90577760-0f86ea00-e198-11ea-9595-84faeb91b92d.png)
