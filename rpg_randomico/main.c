@@ -542,21 +542,21 @@ void controlar_dados(int x)
 void printar_rank(void)
 {
     system("clear");
-    if(personagem.rank > 1000)
+    if(personagem.rank >= 999)
     {
         printf("Seu recorde e de %d dias sobrevividos! \n", personagem.rank);
         printf("Reza a lenda que um heroi nasceria na humanidade... E parece que e voce! \n");
     }
     else
     {
-        if(personagem.rank > 100)
+        if(personagem.rank > 99)
         {
             printf("Seu recorde e de %d dias sobrevividos! \n", personagem.rank);
             printf("Voce e um jogador muito empenhado! \n");
         }
         else
         {
-            if(personagem.rank > 50)
+            if(personagem.rank > 49)
             {
                 printf("Seu recorde e de %d dias sobrevividos! Continue assim! \n", personagem.rank);
             }
