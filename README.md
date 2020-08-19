@@ -6,6 +6,7 @@ Este programa é um *RPG* randômico baseado em texto.
 ### RPG
 "*Role-playing game*, também conhecido como *RPG*, é um tipo de jogo em que os jogadores assumem papéis de personagens e criam narrativas colaborativamente. O progresso de um jogo se dá de acordo com um sistema de regras predeterminado, dentro das quais os jogadores podem improvisar livremente."
 *fonte: Wikipedia*
+
 Neste programa o RPG é *solo*, *randômico* e *baseado em texto*.
 
 **RPG Solo**
