@@ -411,7 +411,7 @@ void iniciar_luta(int x)
     do
     {
         controlar_dados(x);
-        if(personagem.velocidade >= monstros[x].velocidade)
+        if(personagem.velocidade > monstros[x].velocidade)
         {
             atacar_inimigo(x);
             if(monstros[x].vida_atual > 0)
