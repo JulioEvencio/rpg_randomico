@@ -71,6 +71,10 @@ void printar_estatisticas(void);
 void controlar_dados(int x);
 /*  Funcao que printa o rank maximo alcancado pelo usuario */
 void printar_rank(void);
+/*  Funcao que salva o rank maximo em um arquivo .txt */
+void salvar_rank(int rank);
+/*  Funcao que carrega o rank maximo do usuario */
+int carregar_rank(void);
 
 /*  Funcao main */
 int main()
@@ -87,8 +91,8 @@ int main()
     printf("Nome: ");
     fgets(personagem.nome, 100, stdin);
     setbuf(stdin, NULL);
-    /*  Zerando o rank maximo sem morrer */
-    personagem.rank = 0;
+    /*  Carregando o rank maximo do usuario */
+    personagem.rank = carregar_rank();
     /*  Loop do menu do jogo */
     do
     {
@@ -572,4 +576,31 @@ void printar_rank(void)
     
     printf("Pressione enter para voltar ao menu... \n");
     getchar();
+}
+
+/*  Funcao que salva o rank maximo em um arquivo .txt */
+void salvar_rank(int rank)
+{
+    FILE *file;
+
+    file = fopen("dados.txt", "r+");
+
+    fprintf(file, "%d", rank);
+
+    fclose(file);
+}
+
+/*  Funcao que carrega o rank maximo do usuario */
+int carregar_rank(void)
+{
+    int rank;
+    FILE *file;
+
+    file = fopen("dados.txt", "r");
+
+    fscanf(file, "%d", &rank);
+
+    fclose(file);
+
+    return rank;
 }
