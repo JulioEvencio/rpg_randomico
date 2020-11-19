@@ -145,7 +145,7 @@ int verificar_opcao(int opcao)
     }
 }
 
-/* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
+/* Funcao que decide a aventura de cada turno, isto e, o local e o que ocorre la. Depois de gerar ele retorna os valores */
 int gerador_aventura(int x, int y)
 {
     /*  Texto do terreno */
@@ -168,7 +168,7 @@ int gerador_aventura(int x, int y)
             printf("uma masmorra ");
             break;
     }
-    /*  Transicao do terreno para oq o jogador encontra */
+    /*  Transicao do terreno para o que o jogador encontra */
     printf("e encontrou ");
     switch(y)
     {
@@ -196,7 +196,12 @@ int gerador_aventura(int x, int y)
     /*  Verificando se o personagem esta vivo */
     if(personagem.vida_atual <= 0)
     {
-        personagem.rank = personagem.dia;
+        /*  Verificando se o usuario quebrou o recorde de dias sobrevividos e depois salvando */
+        if(personagem.rank < personagem.dia)
+        {
+            personagem.rank = personagem.dia;
+            salvar_rank(personagem.rank);
+        }
         return -1;
     }
     else
