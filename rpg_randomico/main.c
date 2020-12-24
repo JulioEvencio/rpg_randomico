@@ -1,5 +1,7 @@
-/*  Bibliotecas */
+//  Bibliotecas
 #include "rpg.h"
+#include "rpg.c"
+#include "personagem.c"
 
 /*  Struct dos monstros */
 typedef struct Lista_monstros
@@ -11,23 +13,6 @@ typedef struct Lista_monstros
     int velocidade;
 }Base_monstros;
 Base_monstros monstros[2];
-
-/*  Struct de atributos do usuario */
-typedef struct Atributos
-{
-    char nome[100];
-    int dia;
-    int rank;
-    int ouro;
-    int ataque;
-    int vida_maxima;
-    int vida_atual;
-    int velocidade;
-    int arma;
-    int armadura;
-    int amuleto;
-}Atributos_base;
-Atributos_base personagem;
 
 /*  Funcoes */
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */

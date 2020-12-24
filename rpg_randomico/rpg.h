@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include "personagem.h"
 
 /*  Constantes */
 
