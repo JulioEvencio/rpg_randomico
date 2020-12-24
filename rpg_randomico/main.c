@@ -33,8 +33,6 @@ void acao_padre(void);
 void acao_ladrao(void);
 /*  Funcao do ogro */
 void acao_ogro(void);
-/*  Funcao que reseta o personagem */
-void resetar_personagem(void);
 /*  Funcao responsavel pelo sistema de luta do jogo */
 void iniciar_luta(int x);
 /*  Funcao do ataque do personagem */
@@ -465,20 +463,6 @@ void atacar_personagem(int x)
     printf("O inimigo atacou voce e causou %d de dano! \n", monstros[x].ataque);
     printf("Pressione enter para continuar... \n");
     getchar();
-}
-
-/*  Funcao que reseta o personagem */
-void resetar_personagem(void)
-{
-    personagem.dia = 1;
-    personagem.ouro = 0;
-    personagem.ataque = 5;
-    personagem.vida_maxima = 20;
-    personagem.vida_atual = personagem.vida_maxima;
-    personagem.velocidade = 3;
-    personagem.arma = 0;
-    personagem.armadura = 0;
-    personagem.amuleto = 0;
 }
 
 /*  Funcao que gera os inimigos */

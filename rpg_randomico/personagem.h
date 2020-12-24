@@ -3,6 +3,14 @@
 
 /*  Constantes */
 #define PERSONAGEM_NOME 50
+#define PERSONAGEM_DIA 1
+#define PERSONAGEM_OURO 1
+#define PERSONAGEM_ATAQUE 5
+#define PERSONAGEM_VIDA 20
+#define PERSONAGEM_VELOCIDADE 3
+#define PERSONAGEM_ARMA 0
+#define PERSONAGEM_ARMADURA 0
+#define PERSONAGEM_AMULETO 0
 
 /*  Variaveis */
 
@@ -25,5 +33,6 @@ typedef struct tipo_personagem Personagem;
 Personagem personagem;
 
 /*  Funcoes */
+void resetar_personagem(void);
 
 #endif // PERSONAGEM_H_INCLUDED
