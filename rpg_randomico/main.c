@@ -1,8 +1,5 @@
 /*  Bibliotecas */
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <string.h>
+#include "rpg.h"
 
 /*  Struct dos monstros */
 typedef struct Lista_monstros
