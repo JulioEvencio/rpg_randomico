@@ -2,6 +2,7 @@
 #define PERSONAGEM_H_INCLUDED
 
 /*  Constantes */
+//  Personagem
 #define PERSONAGEM_NOME 50
 #define PERSONAGEM_DIA 1
 #define PERSONAGEM_OURO 1
@@ -11,6 +12,8 @@
 #define PERSONAGEM_ARMA 0
 #define PERSONAGEM_ARMADURA 0
 #define PERSONAGEM_AMULETO 0
+//  Ouro
+#define OURO_VALOR (rand() % 6) + 1
 
 /*  Variaveis */
 
@@ -34,5 +37,6 @@ Personagem personagem;
 
 /*  Funcoes */
 void resetar_personagem(void);
+void adicionar_ouro(void);
 
 #endif // PERSONAGEM_H_INCLUDED

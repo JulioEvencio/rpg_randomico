@@ -15,3 +15,12 @@ void resetar_personagem(void)
     personagem.armadura = PERSONAGEM_ARMADURA;
     personagem.amuleto = PERSONAGEM_AMULETO;
 }
+
+//  Funcao que adiciona ouro ao personagem
+void adicionar_ouro(void)
+{
+    int x;
+    x = OURO_VALOR;
+    personagem.ouro = personagem.ouro + x;
+    printf("Voce ganhou %d moedas de ouro! \n", x);
+}

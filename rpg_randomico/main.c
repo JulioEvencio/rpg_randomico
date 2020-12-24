@@ -43,8 +43,6 @@ void atacar_personagem(int x);
 void criar_inimigos(void);
 /*  Funcao que gera os inimigos */
 void gerar_inimigos(void);
-/*  Funcao que adiciona ouro ao personagem */
-void adicionar_ouro(void);
 /*  Funcao que printa as estatisticas do usuario */
 void printar_estatisticas(void);
 /*  Funcao que controla os print das estatisticas durante a luta */
@@ -481,15 +479,6 @@ void gerar_inimigos(void)
     monstros[1].vida_maxima = 15;
     monstros[1].vida_atual = monstros[1].vida_maxima;
     monstros[1].velocidade = 1;
-}
-
-/*  Funcao que adiciona ouro ao personagem */
-void adicionar_ouro(void)
-{
-    int x;
-    x = (rand() % 6) + 1;
-    personagem.ouro = personagem.ouro + x;
-    printf("Voce ganhou %d moedas de ouro! \n", x);
 }
 
 /*  Funcao que printa as estatisticas do usuario */
