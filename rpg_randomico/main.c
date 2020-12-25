@@ -368,10 +368,10 @@ void iniciar_luta(int x)
     do
     {
         controlar_dados(x);
-        if(personagem.velocidade > monstros[x].velocidade)
+        if(personagem.velocidade > inimigo[x].velocidade)
         {
             atacar_inimigo(x);
-            if(monstros[x].vida_atual > 0)
+            if(inimigo[x].vida_atual > 0)
             {
                 atacar_personagem(x);
                 if(personagem.vida_atual <= 0)
@@ -394,7 +394,7 @@ void iniciar_luta(int x)
             if(personagem.vida_atual > 0)
             {
                 atacar_inimigo(x);
-                if(monstros[x].vida_atual <= 0)
+                if(inimigo[x].vida_atual <= 0)
                 {
                     printf("O inimigo morreu... \n");
                     adicionar_ouro();
@@ -416,7 +416,7 @@ void iniciar_luta(int x)
 /*  Funcao do ataque do personagem */
 void atacar_inimigo(int x)
 {
-    monstros[x].vida_atual = monstros[x].vida_atual - personagem.ataque;
+    inimigo[x].vida_atual = inimigo[x].vida_atual - personagem.ataque;
     controlar_dados(x);
     printf("Voce atacou o inimigo e causou %d de dano! \n", personagem.ataque);
     printf("Pressione enter para continuar... \n");
@@ -426,9 +426,9 @@ void atacar_inimigo(int x)
 /*  Funcao do ataque dos monstros */
 void atacar_personagem(int x)
 {
-    personagem.vida_atual = personagem.vida_atual - monstros[x].ataque;
+    personagem.vida_atual = personagem.vida_atual - inimigo[x].ataque;
     controlar_dados(x);
-    printf("O inimigo atacou voce e causou %d de dano! \n", monstros[x].ataque);
+    printf("O inimigo atacou voce e causou %d de dano! \n", inimigo[x].ataque);
     printf("Pressione enter para continuar... \n");
     getchar();
 }
@@ -449,8 +449,8 @@ void controlar_dados(int x)
     printf("--------------------------\n");
     printar_estatisticas();
     printf("--------------------------\n");
-    printf("Inimigo: %s \n", monstros[x].nome);
-    printf("Vida: %3d / %3d \n", monstros[x].vida_atual, monstros[x].vida_maxima);
+    printf("Inimigo: %s \n", inimigo[x].nome);
+    printf("Vida: %3d / %3d \n", inimigo[x].vida_atual, inimigo[x].vida_maxima);
     printf("--------------------------\n");
 }
 
