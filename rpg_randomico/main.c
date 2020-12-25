@@ -4,17 +4,6 @@
 #include "personagem.c"
 #include "inimigo.c"
 
-/*  Struct dos monstros */
-typedef struct Lista_monstros
-{
-    char nome[100];
-    int ataque;
-    int vida_atual;
-    int vida_maxima;
-    int velocidade;
-}Base_monstros;
-Base_monstros monstros[2];
-
 /*  Funcoes */
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
 int printar_menu(void);
