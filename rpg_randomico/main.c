@@ -19,20 +19,12 @@ void acao_npc(void);
 void acao_comerciante(void);
 /*  Funcao do padre */
 void acao_padre(void);
-/*  Funcao do ladrao */
-void acao_ladrao(void);
-/*  Funcao do ogro */
-void acao_ogro(void);
 /*  Funcao responsavel pelo sistema de luta do jogo */
 void iniciar_luta(int x);
 /*  Funcao do ataque do personagem */
 void atacar_inimigo(int x);
 /*  Funcao do ataque dos monstros */
 void atacar_personagem(int x);
-/*  Funcao que cria os inimigos */
-void criar_inimigos(void);
-/*  Funcao que gera os inimigos */
-void gerar_inimigos(void);
 /*  Funcao que printa as estatisticas do usuario */
 void printar_estatisticas(void);
 /*  Funcao que controla os print das estatisticas durante a luta */
@@ -361,12 +353,6 @@ void acao_padre(void)
     }
     printf("----------------------------------------- \n");
     
-}
-
-/*  Funcao do ladrao */
-void acao_ladrao(void)
-{
-    iniciar_luta(0);
 }
 
 /*  Funcao do ogro */
