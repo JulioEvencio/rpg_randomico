@@ -355,12 +355,6 @@ void acao_padre(void)
     
 }
 
-/*  Funcao do ogro */
-void acao_ogro(void)
-{
-    iniciar_luta(1);
-}
-
 /*  Funcao responsavel pelo sistema de luta do jogo */
 void iniciar_luta(int x)
 {
