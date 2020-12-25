@@ -35,7 +35,6 @@ Inimigo inimigo[INIMIGO_QUANTIDADE];
 /*  Funcoes */
 void acao_ladrao(void);
 void acao_ogro(void);
-void criar_inimigos(void);
 void gerar_inimigos(void);
 
 #endif // MONSTROS_H_INCLUDED
