@@ -433,24 +433,6 @@ void atacar_personagem(int x)
     getchar();
 }
 
-/*  Funcao que gera os inimigos */
-void gerar_inimigos(void)
-{
-    /*  Lista de monstros */
-    /*  Ladrao */
-    strcpy(monstros[0].nome, "Ladrao");
-    monstros[0].ataque = 3;
-    monstros[0].vida_maxima = 10;
-    monstros[0].vida_atual = monstros[0].vida_maxima;
-    monstros[0].velocidade = 3;
-    /*  Ogro */
-    strcpy(monstros[1].nome, "Ogro");
-    monstros[1].ataque = 2;
-    monstros[1].vida_maxima = 15;
-    monstros[1].vida_atual = monstros[1].vida_maxima;
-    monstros[1].velocidade = 1;
-}
-
 /*  Funcao que printa as estatisticas do usuario */
 void printar_estatisticas(void)
 {

@@ -6,15 +6,17 @@
 #define INIMIGO_NOME 50
 #define INIMIGO_QUANTIDADE 2
 //  Ladrao
+#define LADRAO_NOME "Ladrao"
 #define LADRAO_ID 0
-#define LADRAO_ATAQUE
-#define LADRAo_VIDA
-#define LADRAO_VELOCIDADE
+#define LADRAO_ATAQUE 3
+#define LADRAo_VIDA 10
+#define LADRAO_VELOCIDADE 3
 //  Ogro
+#define OGRO_NOME "Ogro"
 #define OGRO_ID 1
-#define OGRO_ATAQUE
-#define OGRO_VIDA
-#define OGRO_VELOCIDADE
+#define OGRO_ATAQUE 2
+#define OGRO_VIDA 15
+#define OGRO_VELOCIDADE 1
 
 /*  Variaveis */
 
