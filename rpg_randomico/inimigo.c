@@ -1,0 +1,3 @@
+#include "rpg.h"
+
+/*  Funcoes */

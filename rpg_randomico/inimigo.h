@@ -1,0 +1,6 @@
+#ifndef MONSTROS_H_INCLUDED
+#define MONSTROS_H_INCLUDED
+
+//  Code
+
+#endif // MONSTROS_H_INCLUDED

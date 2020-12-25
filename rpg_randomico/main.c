@@ -2,6 +2,7 @@
 #include "rpg.h"
 #include "rpg.c"
 #include "personagem.c"
+#include "inimigo.c"
 
 /*  Struct dos monstros */
 typedef struct Lista_monstros
