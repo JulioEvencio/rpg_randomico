@@ -13,8 +13,6 @@ int verificar_opcao(int opcao);
 int rodar_jogo(void);
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
 int gerador_aventura(int x, int y);
-/*  Funcao do padre */
-void acao_padre(void);
 /*  Funcao responsavel pelo sistema de luta do jogo */
 void iniciar_luta(int x);
 /*  Funcao do ataque do personagem */
@@ -137,8 +135,8 @@ int gerador_aventura(int x, int y)
             acao_comerciante();
             break;
         case(2):
-            printf("um padre \n");
-            acao_padre();
+            printf("um sarcedote \n");
+            acao_sacerdote();
             break;
         case(3):
             printf("um ladrao \n");
@@ -182,24 +180,6 @@ int rodar_jogo(void)
         personagem.dia++;
     }while(loop != -1);
     return -1;
-}
-
-/*  Funcao do padre */
-void acao_padre(void)
-{
-    printf("----------------------------------------- \n");
-    printf("Padre: ");
-    if(personagem.vida_atual != personagem.vida_maxima)
-    {
-        printf("Vou curar suas feridas! Ate logo bravo aventureiro! \n");
-        personagem.vida_atual = personagem.vida_maxima;
-    }
-    else
-    {
-        printf("Cuidado com os monstros desse mundo! \n");
-    }
-    printf("----------------------------------------- \n");
-    
 }
 
 /*  Funcao responsavel pelo sistema de luta do jogo */

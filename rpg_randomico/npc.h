@@ -28,6 +28,8 @@
 #define AMULETO_PRECO 50
 #define AMULETO_VELOCIDADE 3
 #define AMULETO_BLOQUEADO 0
+//  Sarcedote
+#define SARCEDOTE_NOME "Sarcedote: "
 
 /*  Variaveis */
 
@@ -38,5 +40,7 @@
 void acao_aldeao(void);
 //  Funcao do comerciante
 void acao_comerciante(void);
+//  Funcao do padre
+void acao_sacerdote(void);
 
 #endif // NPC_H_INCLUDED
