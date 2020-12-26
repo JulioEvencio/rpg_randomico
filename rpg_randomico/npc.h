@@ -2,6 +2,8 @@
 #define NPC_H_INCLUDED
 
 /*  Constantes */
+//  Sarcedote
+#define SARCEDOTE_NOME "Sarcedote: "
 
 /*  Variaveis */
 
@@ -9,6 +11,6 @@
 
 /*  Funcoes */
 //  Funcao do padre
-void acao_padre(void);
+void acao_sacerdote(void);
 
 #endif // NPC_H_INCLUDED

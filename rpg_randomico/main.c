@@ -139,8 +139,8 @@ int gerador_aventura(int x, int y)
             acao_comerciante();
             break;
         case(2):
-            printf("um padre \n");
-            acao_padre();
+            printf("um sarcedote \n");
+            acao_sacerdote();
             break;
         case(3):
             printf("um ladrao \n");

@@ -3,10 +3,10 @@
 
 /*  Funcoes */
 /*  Funcao do padre */
-void acao_padre(void)
+void acao_sacerdote(void)
 {
     printf("----------------------------------------- \n");
-    printf("Padre: ");
+    printf(SARCEDOTE_NOME);
     if(personagem.vida_atual != personagem.vida_maxima)
     {
         printf("Vou curar suas feridas! Ate logo bravo aventureiro! \n");
