@@ -19,6 +19,10 @@
 #define ARMADURA_PRECO 80
 #define ARMADURA_PROTECAO 5
 #define ARMADURA_BLOQUEADA 0
+//  Amuleto
+#define AMULETO_PRECO 50
+#define AMULETO_VELOCIDADE 3
+#define AMULETO_BLOQUEADO 0
 
 /*  Variaveis */
 

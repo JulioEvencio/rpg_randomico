@@ -87,7 +87,7 @@ void acao_comerciante(void)
                     
             }
             break;
-                case(2):
+                case(COMERCIANTE_AMULETO):
                     printf("um amuleto por 50 moedas de ouro? \n");
                     printf("1. Sim \n");
                     printf("2. Nao \n");
@@ -96,15 +96,15 @@ void acao_comerciante(void)
                     setbuf(stdin, NULL);
                     switch(op)
                     {
-                        case(1):
-                            if(personagem.ouro >= 50)
+                        case(QUER_COMPRAR):
+                            if(personagem.ouro >= AMULETO_PRECO)
                             {
-                                if(personagem.amuleto == 0)
+                                if(personagem.amuleto == AMULETO_BLOQUEADO)
                                 {
                                     printf("E bom fazer negocios com voce! \n");
-                                    personagem.ouro = personagem.ouro - 50;
+                                    personagem.ouro = personagem.ouro - AMULETO_PRECO;
                                     personagem.amuleto++;
-                                    personagem.velocidade = personagem.velocidade + 3;
+                                    personagem.velocidade = personagem.velocidade + AMULETO_VELOCIDADE;
                                 }
                                 else
                                 {
@@ -118,7 +118,7 @@ void acao_comerciante(void)
                             }
                             
                             break;
-                        case(2):
+                        case(NAO_QUER_COMPRAR):
                             printf("OK, ate logo! \n");
                             break;
                             default:
