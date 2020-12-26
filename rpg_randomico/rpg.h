@@ -8,6 +8,7 @@
 #include <string.h>
 #include "personagem.h"
 #include "inimigo.h"
+#include "npc.h"
 
 /*  Constantes */
 
