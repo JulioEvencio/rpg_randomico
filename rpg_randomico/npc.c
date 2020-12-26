@@ -49,7 +49,7 @@ void acao_comerciante(void)
                     printf("Nao brinque comigo, quer saber? Vou embora que ganho mais! \n");
             }
             break;
-        case(1):
+        case(COMERCIANTE_ARMADURA):
             printf("uma armadura por 80 moedas de ouro? \n");
             printf("1. Sim \n");
             printf("2. Nao \n");
@@ -58,15 +58,15 @@ void acao_comerciante(void)
             setbuf(stdin, NULL);
             switch(op)
             {
-                case(1):
-                    if(personagem.ouro >= 80)
+                case(QUER_COMPRAR):
+                    if(personagem.ouro >= ARMADURA_PRECO)
                     {
-                        if(personagem.armadura == 0)
+                        if(personagem.armadura == ARMADURA_BLOQUEADA)
                         {
                             printf("Haha, nos vemos em breve! \n");
-                            personagem.ouro = personagem.ouro - 80;
+                            personagem.ouro = personagem.ouro - ARMADURA_PRECO;
                             personagem.armadura++;
-                            personagem.vida_maxima = personagem.vida_maxima + 5;
+                            personagem.vida_maxima = personagem.vida_maxima + ARMADURA_PROTECAO;
                         }
                         else
                         {
@@ -79,7 +79,7 @@ void acao_comerciante(void)
                         printf("Voce nao tem ouro suficiente! \n");
                     }
                     break;
-                case(2):
+                case(NAO_QUER_COMPRAR):
                     printf("Ok entao, nos vemos em breve! \n");
                     break;
                 default:

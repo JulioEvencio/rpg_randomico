@@ -15,6 +15,10 @@
 #define ESPADA_PRECO 100
 #define ESPADA_ATAQUE 1
 #define ESPADA_BLOQUEADA 0
+//  Armadura
+#define ARMADURA_PRECO 80
+#define ARMADURA_PROTECAO 5
+#define ARMADURA_BLOQUEADA 0
 
 /*  Variaveis */
 
