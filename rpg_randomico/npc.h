@@ -28,8 +28,6 @@
 #define AMULETO_PRECO 50
 #define AMULETO_VELOCIDADE 3
 #define AMULETO_BLOQUEADO 0
-//  Sarcedote
-#define SARCEDOTE_NOME "Sarcedote: "
 
 /*  Variaveis */
 

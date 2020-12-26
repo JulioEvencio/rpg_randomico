@@ -157,7 +157,7 @@ void acao_comerciante(void)
 void acao_sacerdote(void)
 {
     printf("----------------------------------------- \n");
-    printf(SARCEDOTE_NOME);
+    printf("Sarcedote: ");
     if(personagem.vida_atual != personagem.vida_maxima)
     {
         printf("Vou curar suas feridas! Ate logo bravo aventureiro! \n");
