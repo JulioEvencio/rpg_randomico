@@ -11,14 +11,17 @@ void acao_aldeao(void)
     printf("Aldeao: ");
     switch(x)
     {
-        case(0):
+        case(ALDEAO_FRASE_1):
             printf("Voce nao e bem vindo aqui \n");
             break;
-        case(1):
+        case(ALDEAO_FRASE_2):
             printf("Seu fim esta proximo... \n");
             break;
-        case(2):
+        case(ALDEAO_FRASE_3):
             printf("Um heroi! isso que este mundo precisa... \n");
+            break;
+        default:
+            printf("Esqueci o que ia falar... \n");
             break;
     }
     printf("----------------------------------------- \n");

@@ -4,6 +4,9 @@
 /*  Constantes */
 //  Aldeao
 #define ALDEAO_FRASES rand() % 3
+#define ALDEAO_FRASE_1 0
+#define ALDEAO_FRASE_2 1
+#define ALDEAO_FRASE_3 3
 
 /*  Variaveis */
 
