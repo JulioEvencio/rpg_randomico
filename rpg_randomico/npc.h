@@ -8,5 +8,7 @@
 /*  Structs */
 
 /*  Funcoes */
+//  Funcao do padre
+void acao_padre(void);
 
 #endif // NPC_H_INCLUDED
