@@ -8,5 +8,6 @@
 /*  Structs */
 
 /*  Funcoes */
+void iniciar_luta(int x);
 
 #endif // LUTA_H_INCLUDED

@@ -14,8 +14,6 @@ int verificar_opcao(int opcao);
 int rodar_jogo(void);
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
 int gerador_aventura(int x, int y);
-/*  Funcao responsavel pelo sistema de luta do jogo */
-void iniciar_luta(int x);
 /*  Funcao do ataque do personagem */
 void atacar_inimigo(int x);
 /*  Funcao do ataque dos monstros */
@@ -181,64 +179,6 @@ int rodar_jogo(void)
         personagem.dia++;
     }while(loop != -1);
     return -1;
-}
-
-/*  Funcao responsavel pelo sistema de luta do jogo */
-void iniciar_luta(int x)
-{
-    int loop = 1;
-    gerar_inimigos();
-    printf("Pressione enter para continuar... \n");
-    getchar();
-    controlar_dados(x);
-    printf("Pressione enter para iniciar o combate... \n");
-    getchar();
-    do
-    {
-        controlar_dados(x);
-        if(personagem.velocidade > inimigo[x].velocidade)
-        {
-            atacar_inimigo(x);
-            if(inimigo[x].vida_atual > 0)
-            {
-                atacar_personagem(x);
-                if(personagem.vida_atual <= 0)
-                {
-                    printf("Voce morreu... \n");
-                    loop = -1;
-                }
-            }
-            else
-            {
-                printf("O inimigo morreu... \n");
-                adicionar_ouro();
-                loop = -1;
-            }
-            
-        }
-        else
-        {
-            atacar_personagem(x);
-            if(personagem.vida_atual > 0)
-            {
-                atacar_inimigo(x);
-                if(inimigo[x].vida_atual <= 0)
-                {
-                    printf("O inimigo morreu... \n");
-                    adicionar_ouro();
-                    loop = -1;
-                }
-            }
-            else
-            {
-                printf("Voce morreu... \n");
-                loop = -1;
-            }
-            
-        }
-        
-    } while (loop != -1);
-    
 }
 
 /*  Funcao do ataque do personagem */
