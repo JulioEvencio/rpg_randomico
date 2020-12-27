@@ -9,6 +9,7 @@
 #include "personagem.h"
 #include "inimigo.h"
 #include "npc.h"
+#include "luta.h"
 
 /*  Constantes */
 

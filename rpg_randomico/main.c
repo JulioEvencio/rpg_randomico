@@ -3,6 +3,7 @@
 #include "rpg.c"
 #include "personagem.c"
 #include "inimigo.c"
+#include "luta.c"
 
 /*  Funcoes */
 /*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
