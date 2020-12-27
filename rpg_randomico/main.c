@@ -14,8 +14,6 @@ int verificar_opcao(int opcao);
 int rodar_jogo(void);
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
 int gerador_aventura(int x, int y);
-/*  Funcao que printa as estatisticas do usuario */
-void printar_estatisticas(void);
 /*  Funcao que printa o rank maximo alcancado pelo usuario */
 void printar_rank(void);
 /*  Funcao que salva o rank maximo em um arquivo .txt */
@@ -173,15 +171,6 @@ int rodar_jogo(void)
         personagem.dia++;
     }while(loop != -1);
     return -1;
-}
-
-/*  Funcao que printa as estatisticas do usuario */
-void printar_estatisticas(void)
-{
-    printf("Nome:   %s", personagem.nome);
-    printf("Dia:    %d \n", personagem.dia);
-    printf("Ouro:   %d \n", personagem.ouro);
-    printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
 }
 
 /*  Funcao que printa o rank maximo alcancado pelo usuario */

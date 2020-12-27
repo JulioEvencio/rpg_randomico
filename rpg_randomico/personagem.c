@@ -24,3 +24,12 @@ void adicionar_ouro(void)
     personagem.ouro = personagem.ouro + x;
     printf("Voce ganhou %d moedas de ouro! \n", x);
 }
+
+//  Funcao que printa as estatisticas do usuario
+void printar_estatisticas(void)
+{
+    printf("Nome:   %s", personagem.nome);
+    printf("Dia:    %d \n", personagem.dia);
+    printf("Ouro:   %d \n", personagem.ouro);
+    printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
+}

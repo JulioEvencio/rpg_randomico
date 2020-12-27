@@ -38,5 +38,6 @@ Personagem personagem;
 /*  Funcoes */
 void resetar_personagem(void);
 void adicionar_ouro(void);
+void printar_estatisticas(void);
 
 #endif // PERSONAGEM_H_INCLUDED
