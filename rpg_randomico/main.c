@@ -16,8 +16,6 @@ int rodar_jogo(void);
 int gerador_aventura(int x, int y);
 /*  Funcao que printa as estatisticas do usuario */
 void printar_estatisticas(void);
-/*  Funcao que controla os print das estatisticas durante a luta */
-void controlar_dados(int x);
 /*  Funcao que printa o rank maximo alcancado pelo usuario */
 void printar_rank(void);
 /*  Funcao que salva o rank maximo em um arquivo .txt */
@@ -184,18 +182,6 @@ void printar_estatisticas(void)
     printf("Dia:    %d \n", personagem.dia);
     printf("Ouro:   %d \n", personagem.ouro);
     printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
-}
-
-/*  Funcao que controla os print das estatisticas durante a luta */
-void controlar_dados(int x)
-{
-    system("clear");
-    printf("--------------------------\n");
-    printar_estatisticas();
-    printf("--------------------------\n");
-    printf("Inimigo: %s \n", inimigo[x].nome);
-    printf("Vida: %3d / %3d \n", inimigo[x].vida_atual, inimigo[x].vida_maxima);
-    printf("--------------------------\n");
 }
 
 /*  Funcao que printa o rank maximo alcancado pelo usuario */

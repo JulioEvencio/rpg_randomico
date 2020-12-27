@@ -83,3 +83,15 @@ void atacar_personagem(int x)
     getchar();
     setbuf(stdin, NULL);
 }
+
+//  Funcao que controla os print das estatisticas durante a luta
+void controlar_dados(int x)
+{
+    system("clear");
+    printf("--------------------------\n");
+    printar_estatisticas();
+    printf("--------------------------\n");
+    printf("Inimigo: %s \n", inimigo[x].nome);
+    printf("Vida: %3d / %3d \n", inimigo[x].vida_atual, inimigo[x].vida_maxima);
+    printf("--------------------------\n");
+}
