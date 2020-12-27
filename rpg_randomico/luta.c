@@ -72,3 +72,14 @@ void atacar_inimigo(int x)
     getchar();
     setbuf(stdin, NULL);
 }
+
+//  Funcao do ataque dos inimigos
+void atacar_personagem(int x)
+{
+    personagem.vida_atual -= inimigo[x].ataque;
+    controlar_dados(x);
+    printf("O inimigo atacou voce e causou %d de dano! \n", inimigo[x].ataque);
+    printf("Pressione enter para continuar... \n");
+    getchar();
+    setbuf(stdin, NULL);
+}
