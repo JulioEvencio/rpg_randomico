@@ -61,3 +61,14 @@ void iniciar_luta(int x)
     } while (loop != -1);
     
 }
+
+//  Funcao do ataque do personagem
+void atacar_inimigo(int x)
+{
+    inimigo[x].vida_atual -= personagem.ataque;
+    controlar_dados(x);
+    printf("Voce atacou o inimigo e causou %d de dano! \n", personagem.ataque);
+    printf("Pressione enter para continuar... \n");
+    getchar();
+    setbuf(stdin, NULL);
+}

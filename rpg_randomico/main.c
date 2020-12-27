@@ -14,8 +14,6 @@ int verificar_opcao(int opcao);
 int rodar_jogo(void);
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
 int gerador_aventura(int x, int y);
-/*  Funcao do ataque do personagem */
-void atacar_inimigo(int x);
 /*  Funcao do ataque dos monstros */
 void atacar_personagem(int x);
 /*  Funcao que printa as estatisticas do usuario */
@@ -179,16 +177,6 @@ int rodar_jogo(void)
         personagem.dia++;
     }while(loop != -1);
     return -1;
-}
-
-/*  Funcao do ataque do personagem */
-void atacar_inimigo(int x)
-{
-    inimigo[x].vida_atual = inimigo[x].vida_atual - personagem.ataque;
-    controlar_dados(x);
-    printf("Voce atacou o inimigo e causou %d de dano! \n", personagem.ataque);
-    printf("Pressione enter para continuar... \n");
-    getchar();
 }
 
 /*  Funcao do ataque dos monstros */
