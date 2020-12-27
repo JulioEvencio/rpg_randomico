@@ -43,8 +43,6 @@ void atacar_personagem(int x);
 void criar_inimigos(void);
 /*  Funcao que gera os inimigos */
 void gerar_inimigos(void);
-/*  Funcao que printa as estatisticas do usuario */
-void printar_estatisticas(void);
 /*  Funcao que controla os print das estatisticas durante a luta */
 void controlar_dados(int x);
 /*  Funcao que printa o rank maximo alcancado pelo usuario */
@@ -479,15 +477,6 @@ void gerar_inimigos(void)
     monstros[1].vida_maxima = 15;
     monstros[1].vida_atual = monstros[1].vida_maxima;
     monstros[1].velocidade = 1;
-}
-
-/*  Funcao que printa as estatisticas do usuario */
-void printar_estatisticas(void)
-{
-    printf("Nome:   %s", personagem.nome);
-    printf("Dia:    %d \n", personagem.dia);
-    printf("Ouro:   %d \n", personagem.ouro);
-    printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
 }
 
 /*  Funcao que controla os print das estatisticas durante a luta */
