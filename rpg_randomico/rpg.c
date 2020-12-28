@@ -173,3 +173,18 @@ void salvar_rank(int rank)
 
     fclose(file);
 }
+
+//  Funcao que carrega o rank maximo do usuario
+int carregar_rank(void)
+{
+    int rank;
+    FILE *file;
+
+    file = fopen("dados.txt", "r");
+
+    fscanf(file, "%d", &rank);
+
+    fclose(file);
+
+    return rank;
+}

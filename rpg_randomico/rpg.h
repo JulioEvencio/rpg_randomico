@@ -24,5 +24,6 @@ int rodar_jogo(void);
 int gerador_aventura(int x, int y);
 void printar_rank(void);
 void salvar_rank(int rank);
+int carregar_rank(void);
 
 #endif // RPG_H_INCLUDED

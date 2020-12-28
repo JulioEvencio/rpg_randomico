@@ -6,11 +6,6 @@
 #include "inimigo.c"
 #include "luta.c"
 
-/*  Funcoes */
-/*  Funcao que carrega o rank maximo do usuario */
-int carregar_rank(void);
-
-/*  Funcao main */
 int main()
 {
     /*  Variaveis */
@@ -36,19 +31,4 @@ int main()
     
 
     return 0;
-}
-
-/*  Funcao que carrega o rank maximo do usuario */
-int carregar_rank(void)
-{
-    int rank;
-    FILE *file;
-
-    file = fopen("dados.txt", "r");
-
-    fscanf(file, "%d", &rank);
-
-    fclose(file);
-
-    return rank;
 }
