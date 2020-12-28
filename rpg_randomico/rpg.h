@@ -20,5 +20,6 @@
 /*  Funcoes */
 int printar_menu(void);
 int verificar_opcao(int opcao);
+int rodar_jogo(void);
 
 #endif // RPG_H_INCLUDED

@@ -7,8 +7,6 @@
 #include "luta.c"
 
 /*  Funcoes */
-/*  Funcao que o jogo em si vai rodar */
-int rodar_jogo(void);
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
 int gerador_aventura(int x, int y);
 /*  Funcao que printa o rank maximo alcancado pelo usuario */
@@ -109,24 +107,6 @@ int gerador_aventura(int x, int y)
     {
         return 0;
     }
-}
-
-/*  Funcao que o jogo em si vai rodar */
-int rodar_jogo(void)
-{
-    int loop;
-    resetar_personagem();
-    gerar_inimigos();
-    do
-    {
-        system("clear");
-        printar_estatisticas();
-        loop = gerador_aventura(rand() % 5, rand() % 5);
-        printf("Pressione enter para continuar... \n");
-        getchar();
-        personagem.dia++;
-    }while(loop != -1);
-    return -1;
 }
 
 /*  Funcao que printa o rank maximo alcancado pelo usuario */
