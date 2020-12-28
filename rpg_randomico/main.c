@@ -7,8 +7,6 @@
 #include "luta.c"
 
 /*  Funcoes */
-/*  Funcao que recebe e verifica a opcao do usuario e a ativa */
-int verificar_opcao(int opcao);
 /*  Funcao que o jogo em si vai rodar */
 int rodar_jogo(void);
 /* Funcao que decide a aventura de cada turno, isto e, o local e oq ocorre la. Depois de gerar ele retorna os valores */
@@ -46,33 +44,6 @@ int main()
     
 
     return 0;
-}
-
-/*  Funcao que recebe e verifica a opcao do usuario e a ativa */
-int verificar_opcao(int opcao)
-{
-    switch(opcao)
-    {
-        case(1):
-            rodar_jogo();
-            return 0;
-            break;
-        case(2):
-            printar_rank();
-            return 0;
-            break;
-        case(0):
-            printf("Obrigado por jogar! \n");
-            printf("Pressione enter para continuar... \n");
-            getchar();
-            return -1;
-            break;
-        default:
-            printf("Opcao invalida! \n");
-            printf("Pressione enter para continuar... \n");
-            getchar();
-            return 0;
-    }
 }
 
 /* Funcao que decide a aventura de cada turno, isto e, o local e o que ocorre la. Depois de gerar ele retorna os valores */

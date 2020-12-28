@@ -19,5 +19,6 @@
 
 /*  Funcoes */
 int printar_menu(void);
+int verificar_opcao(int opcao);
 
 #endif // RPG_H_INCLUDED

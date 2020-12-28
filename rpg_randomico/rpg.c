@@ -15,3 +15,30 @@ int printar_menu(void)
     setbuf(stdin, NULL);
     return opcao;
 }
+
+//  Funcao que recebe e verifica a opcao do usuario e a ativa
+int verificar_opcao(int opcao)
+{
+    switch(opcao)
+    {
+        case(1):
+            rodar_jogo();
+            return 0;
+            break;
+        case(2):
+            printar_rank();
+            return 0;
+            break;
+        case(0):
+            printf("Obrigado por jogar! \n");
+            printf("Pressione enter para continuar... \n");
+            getchar();
+            return -1;
+            break;
+        default:
+            printf("Opcao invalida! \n");
+            printf("Pressione enter para continuar... \n");
+            getchar();
+            return 0;
+    }
+}
