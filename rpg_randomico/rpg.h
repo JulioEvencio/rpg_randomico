@@ -18,5 +18,6 @@
 /*  Structs */
 
 /*  Funcoes */
+int printar_menu(void);
 
 #endif // RPG_H_INCLUDED

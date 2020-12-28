@@ -7,8 +7,6 @@
 #include "luta.c"
 
 /*  Funcoes */
-/*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
-int printar_menu(void);
 /*  Funcao que recebe e verifica a opcao do usuario e a ativa */
 int verificar_opcao(int opcao);
 /*  Funcao que o jogo em si vai rodar */
@@ -48,20 +46,6 @@ int main()
     
 
     return 0;
-}
-
-/*  Funcao que printa o menu  e logo em seguida retorna a opcao desejada do usuario */
-int printar_menu(void)
-{
-    int opcao;
-    printf("------MENU------ \n");
-    printf("1. Novo jogo \n");
-    printf("2. Rank \n");
-    printf("0. Sair do jogo \n");
-    printf("Opcao: ");
-    scanf("%d", &opcao);
-    setbuf(stdin, NULL);
-    return opcao;
 }
 
 /*  Funcao que recebe e verifica a opcao do usuario e a ativa */
