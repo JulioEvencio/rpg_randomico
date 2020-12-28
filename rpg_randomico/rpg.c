@@ -161,3 +161,15 @@ void printar_rank(void)
     printf("Pressione enter para voltar ao menu... \n");
     getchar();
 }
+
+//  Funcao que salva o rank maximo em um arquivo .txt
+void salvar_rank(int rank)
+{
+    FILE *file;
+
+    file = fopen("dados.txt", "r+");
+
+    fprintf(file, "%d", rank);
+
+    fclose(file);
+}

@@ -23,5 +23,6 @@ int verificar_opcao(int opcao);
 int rodar_jogo(void);
 int gerador_aventura(int x, int y);
 void printar_rank(void);
+void salvar_rank(int rank);
 
 #endif // RPG_H_INCLUDED

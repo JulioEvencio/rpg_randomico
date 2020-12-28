@@ -7,8 +7,6 @@
 #include "luta.c"
 
 /*  Funcoes */
-/*  Funcao que salva o rank maximo em um arquivo .txt */
-void salvar_rank(int rank);
 /*  Funcao que carrega o rank maximo do usuario */
 int carregar_rank(void);
 
@@ -38,18 +36,6 @@ int main()
     
 
     return 0;
-}
-
-/*  Funcao que salva o rank maximo em um arquivo .txt */
-void salvar_rank(int rank)
-{
-    FILE *file;
-
-    file = fopen("dados.txt", "r+");
-
-    fprintf(file, "%d", rank);
-
-    fclose(file);
 }
 
 /*  Funcao que carrega o rank maximo do usuario */
