@@ -21,5 +21,6 @@
 int printar_menu(void);
 int verificar_opcao(int opcao);
 int rodar_jogo(void);
+int gerador_aventura(int x, int y);
 
 #endif // RPG_H_INCLUDED

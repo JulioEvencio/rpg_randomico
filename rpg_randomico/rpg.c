@@ -60,3 +60,68 @@ int rodar_jogo(void)
     }while(loop != -1);
     return -1;
 }
+
+// Funcao que decide a aventura de cada turno, isto e, o local e o que ocorre la. Depois de gerar ele retorna os valores
+int gerador_aventura(int x, int y)
+{
+    //  Texto do terreno
+    printf("Voce chegou a ");
+    switch(x)
+    {
+        case(0):
+            printf("uma cidade ");
+            break;
+        case(1):
+            printf("um deserto ");
+            break;
+        case(2):
+            printf("uma floresta ");
+            break;
+        case(3):
+            printf("uma planice ");
+            break;
+        case(4):
+            printf("uma masmorra ");
+            break;
+    }
+    //  Transicao do terreno para o que o jogador encontra
+    printf("e encontrou ");
+    switch(y)
+    {
+        case(0):
+            printf("um aldeao \n");
+            acao_aldeao();
+            break;
+        case(1):
+            printf("um comerciante \n");
+            acao_comerciante();
+            break;
+        case(2):
+            printf("um sarcedote \n");
+            acao_sacerdote();
+            break;
+        case(3):
+            printf("um ladrao \n");
+            acao_ladrao();
+            break;
+        case(4):
+            printf("um ogro \n");
+            acao_ogro();
+            break;
+    }
+    //  Verificando se o personagem esta vivo
+    if(personagem.vida_atual <= 0)
+    {
+        //  Verificando se o usuario quebrou o recorde de dias sobrevividos e depois salvando
+        if(personagem.rank < personagem.dia)
+        {
+            personagem.rank = personagem.dia;
+            salvar_rank(personagem.rank);
+        }
+        return -1;
+    }
+    else
+    {
+        return 0;
+    }
+}
