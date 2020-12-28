@@ -2,6 +2,7 @@
 #include "rpg.h"
 #include "rpg.c"
 #include "personagem.c"
+#include "npc.c"
 #include "inimigo.c"
 #include "luta.c"
 
