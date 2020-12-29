@@ -26,7 +26,7 @@
 
 /*  Variaveis */
 
-/*  Structs */
+/*  Structs e Enum */
 enum enum_menu
 {
     sair_jogo,
