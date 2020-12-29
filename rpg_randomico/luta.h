@@ -2,6 +2,8 @@
 #define LUTA_H_INCLUDED
 
 /*  Constantes */
+#define PERSONAGEM_MORREU personagem.vida_atual <= 0
+#define INIMIGO_MORREU inimigo[x].vida_atual <= 0
 
 /*  Variaveis */
 

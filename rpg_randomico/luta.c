@@ -20,45 +20,45 @@ void iniciar_luta(int x)
         if(personagem.velocidade > inimigo[x].velocidade)
         {
             atacar_inimigo(x);
-            if(inimigo[x].vida_atual > 0)
+            if(!INIMIGO_MORREU)
             {
                 atacar_personagem(x);
-                if(personagem.vida_atual <= 0)
+                if(PERSONAGEM_MORREU)
                 {
                     printf("Voce morreu... \n");
-                    loop = -1;
+                    loop = 0;
                 }
             }
             else
             {
                 printf("O inimigo morreu... \n");
                 adicionar_ouro();
-                loop = -1;
+                loop = 0;
             }
             
         }
         else
         {
             atacar_personagem(x);
-            if(personagem.vida_atual > 0)
+            if(!PERSONAGEM_MORREU)
             {
                 atacar_inimigo(x);
-                if(inimigo[x].vida_atual <= 0)
+                if(INIMIGO_MORREU)
                 {
                     printf("O inimigo morreu... \n");
                     adicionar_ouro();
-                    loop = -1;
+                    loop = 0;
                 }
             }
             else
             {
                 printf("Voce morreu... \n");
-                loop = -1;
+                loop = 0;
             }
             
         }
         
-    } while (loop != -1);
+    } while (loop);
     
 }
 

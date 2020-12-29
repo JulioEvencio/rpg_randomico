@@ -28,7 +28,7 @@ void adicionar_ouro(void)
 //  Funcao que printa as estatisticas do usuario
 void printar_estatisticas(void)
 {
-    printf("Nome:   %s", personagem.nome);
+    printf("Nome:   %s \n", personagem.nome);
     printf("Dia:    %d \n", personagem.dia);
     printf("Ouro:   %d \n", personagem.ouro);
     printf("Vida: %3d / %3d \n", personagem.vida_atual, personagem.vida_maxima);
