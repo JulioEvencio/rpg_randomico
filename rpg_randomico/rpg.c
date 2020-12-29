@@ -21,24 +21,26 @@ int verificar_opcao(int opcao)
 {
     switch(opcao)
     {
-        case(1):
+        case(novo_jogo):
             rodar_jogo();
             return 0;
             break;
-        case(2):
+        case(rank):
             printar_rank();
             return 0;
             break;
-        case(0):
+        case(sair_jogo):
             printf("Obrigado por jogar! \n");
             printf("Pressione enter para continuar... \n");
             getchar();
+            setbuf(stdin, NULL);
             return -1;
             break;
         default:
             printf("Opcao invalida! \n");
             printf("Pressione enter para continuar... \n");
             getchar();
+            setbuf(stdin, NULL);
             return 0;
     }
 }
@@ -53,9 +55,10 @@ int rodar_jogo(void)
     {
         system("clear");
         printar_estatisticas();
-        loop = gerador_aventura(rand() % 5, rand() % 5);
+        loop = gerador_aventura(TERRENO_NUMERO, ENCONTRO_NUMERO);
         printf("Pressione enter para continuar... \n");
         getchar();
+        setbuf(stdin, NULL);
         personagem.dia++;
     }while(loop != -1);
     return -1;
@@ -68,19 +71,19 @@ int gerador_aventura(int x, int y)
     printf("Voce chegou a ");
     switch(x)
     {
-        case(0):
+        case(cidade):
             printf("uma cidade ");
             break;
-        case(1):
+        case(deserto):
             printf("um deserto ");
             break;
-        case(2):
+        case(floresta):
             printf("uma floresta ");
             break;
-        case(3):
+        case(planice):
             printf("uma planice ");
             break;
-        case(4):
+        case(masmorra):
             printf("uma masmorra ");
             break;
     }
@@ -88,23 +91,23 @@ int gerador_aventura(int x, int y)
     printf("e encontrou ");
     switch(y)
     {
-        case(0):
+        case(aldeao):
             printf("um aldeao \n");
             acao_aldeao();
             break;
-        case(1):
+        case(comerciante):
             printf("um comerciante \n");
             acao_comerciante();
             break;
-        case(2):
+        case(sacerdote):
             printf("um sarcedote \n");
             acao_sacerdote();
             break;
-        case(3):
+        case(ladrao):
             printf("um ladrao \n");
             acao_ladrao();
             break;
-        case(4):
+        case(ogro):
             printf("um ogro \n");
             acao_ogro();
             break;
@@ -130,21 +133,21 @@ int gerador_aventura(int x, int y)
 void printar_rank(void)
 {
     system("clear");
-    if(personagem.rank >= 999)
+    if(personagem.rank >= RANK_3)
     {
         printf("Seu recorde e de %d dias sobrevividos! \n", personagem.rank);
         printf("Reza a lenda que um heroi nasceria na humanidade... E parece que e voce! \n");
     }
     else
     {
-        if(personagem.rank > 99)
+        if(personagem.rank > RANK_2)
         {
             printf("Seu recorde e de %d dias sobrevividos! \n", personagem.rank);
             printf("Voce e um jogador muito empenhado! \n");
         }
         else
         {
-            if(personagem.rank > 49)
+            if(personagem.rank > RANK_1)
             {
                 printf("Seu recorde e de %d dias sobrevividos! Continue assim! \n", personagem.rank);
             }
@@ -160,6 +163,7 @@ void printar_rank(void)
     
     printf("Pressione enter para voltar ao menu... \n");
     getchar();
+    setbuf(stdin, NULL);
 }
 
 //  Funcao que salva o rank maximo em um arquivo .txt
@@ -167,7 +171,7 @@ void salvar_rank(int rank)
 {
     FILE *file;
 
-    file = fopen("dados.txt", "r+");
+    file = fopen(ARQUIVO_NOME, ARQUIVO_EDICAO);
 
     fprintf(file, "%d", rank);
 
@@ -180,7 +184,7 @@ int carregar_rank(void)
     int rank;
     FILE *file;
 
-    file = fopen("dados.txt", "r");
+    file = fopen(ARQUIVO_NOME, ARQUIVO_LEITURA);
 
     fscanf(file, "%d", &rank);
 
