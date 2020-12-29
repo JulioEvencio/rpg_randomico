@@ -188,3 +188,15 @@ int carregar_rank(void)
 
     return rank;
 }
+
+//  Funcao que remove o 'ENTER' das palavras
+void remover_enter(char palavra[], int tamanho)
+{
+    for(int incremento = 0; incremento < tamanho; incremento++)
+    {
+        if(palavra[incremento] == '\n')
+        {
+            palavra[incremento] = '\0';
+        }
+    }
+}

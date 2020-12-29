@@ -18,7 +18,8 @@ int main()
     printf("Bem vindo ao RPG Randomico! \n");
     printf("Qual e seu nome de aventureiro? \n");
     printf("Nome: ");
-    fgets(personagem.nome, 100, stdin);
+    fgets(personagem.nome, PERSONAGEM_NOME, stdin);
+    remover_enter(personagem.nome, PERSONAGEM_NOME);
     setbuf(stdin, NULL);
     /*  Carregando o rank maximo do usuario */
     personagem.rank = carregar_rank();
