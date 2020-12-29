@@ -51,9 +51,9 @@ void acao_comerciante(void)
                         if(personagem.arma == ESPADA_BLOQUEADA)
                         {
                             printf("Hehe, volte sempre! \n");
-                            personagem.ouro = personagem.ouro - ESPADA_PRECO;
+                            personagem.ouro -= ESPADA_PRECO;
                             personagem.arma++;
-                            personagem.ataque = personagem.ataque + ESPADA_ATAQUE;
+                            personagem.ataque += ESPADA_ATAQUE;
                         }
                         else
                         {
@@ -88,9 +88,9 @@ void acao_comerciante(void)
                         if(personagem.armadura == ARMADURA_BLOQUEADA)
                         {
                             printf("Haha, nos vemos em breve! \n");
-                            personagem.ouro = personagem.ouro - ARMADURA_PRECO;
+                            personagem.ouro -= ARMADURA_PRECO;
                             personagem.armadura++;
-                            personagem.vida_maxima = personagem.vida_maxima + ARMADURA_PROTECAO;
+                            personagem.vida_maxima += ARMADURA_PROTECAO;
                         }
                         else
                         {
@@ -126,9 +126,9 @@ void acao_comerciante(void)
                                 if(personagem.amuleto == AMULETO_BLOQUEADO)
                                 {
                                     printf("E bom fazer negocios com voce! \n");
-                                    personagem.ouro = personagem.ouro - AMULETO_PRECO;
+                                    personagem.ouro -= AMULETO_PRECO;
                                     personagem.amuleto++;
-                                    personagem.velocidade = personagem.velocidade + AMULETO_VELOCIDADE;
+                                    personagem.velocidade += AMULETO_VELOCIDADE;
                                 }
                                 else
                                 {
