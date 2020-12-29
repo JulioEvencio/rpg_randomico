@@ -21,7 +21,7 @@ void adicionar_ouro(void)
 {
     int x;
     x = OURO_VALOR;
-    personagem.ouro = personagem.ouro + x;
+    personagem.ouro += x;
     printf("Voce ganhou %d moedas de ouro! \n", x);
 }
 
