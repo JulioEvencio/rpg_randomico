@@ -2,11 +2,19 @@
 #include <stdlib.h>
 #include "cabecalho.h"
 #include "menu/menu.h"
-#include "jogador/jogador.h"
+#include "jogo/jogo.h"
 
 int main(void)
 {
     int loop;
+
+    Jogo *jogo;
+
+    if (jogo_criar(&jogo))
+    {
+        puts("Erro ao criar o jogo!");
+        return 1;
+    }
 
     do
     {
@@ -37,6 +45,8 @@ int main(void)
 
         pausar_tela("Pressione enter para continuar...");
     } while (loop);
+
+    jogo_liberar(&jogo);
 
     return 0;
 }
