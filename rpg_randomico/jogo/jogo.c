@@ -1,15 +1,12 @@
 #include <stdlib.h>
 #include "jogo.h"
 #include "../jogador/jogador.h"
-#include "../npc/npc.h"
 
 struct Jogo
 {
+    int dias;
     Jogador *jogador;
     /* Inimigo: Goblin e Ogro */
-    Npc *npc;
-    /* Padre */
-    /* Comerciante */
 };
 
 int jogo_criar(Jogo **jogo)
@@ -24,19 +21,13 @@ int jogo_criar(Jogo **jogo)
         return -1;
     }
 
-    if (npc_criar(&(*jogo)->npc))
-    {
-        jogador_liberar(&(*jogo)->jogador);
-        free(*jogo);
-        return -1;
-    }
+    (*jogo)->dias = 0;
 
     return 0;
 }
 
 void jogo_liberar(Jogo **jogo)
 {
-    npc_liberar(&((*jogo)->npc));
     jogador_liberar(&(*jogo)->jogador);
     free(*jogo);
 }
