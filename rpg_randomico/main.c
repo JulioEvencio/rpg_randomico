@@ -18,12 +18,7 @@ int main(void)
 
     do
     {
-        if (menu_imprimir(&loop))
-        {
-            puts("Digite um numero!");
-            pausar_tela("Pressione enter para continuar...");
-            continue;
-        }
+        if (menu_imprimir(&loop)) loop = -1;
 
         switch (loop)
         {
