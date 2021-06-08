@@ -8,14 +8,6 @@ int main(void)
 {
     int loop;
 
-    Jogo *jogo;
-
-    if (jogo_criar(&jogo))
-    {
-        puts("Erro ao criar o jogo!");
-        return 1;
-    }
-
     do
     {
         if (menu_imprimir(&loop)) loop = -1;
@@ -23,7 +15,7 @@ int main(void)
         switch (loop)
         {
             case JOGAR:
-                puts("Jogar...");
+                if (jogo_jogar()) puts("Erro ao iniciar o jogo!");
                 break;
 
             case RANK:
@@ -40,8 +32,6 @@ int main(void)
 
         pausar_tela("Pressione enter para continuar...");
     } while (loop);
-
-    jogo_liberar(&jogo);
 
     return 0;
 }

@@ -1,4 +1,7 @@
+#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include "../cabecalho.h"
 #include "jogo.h"
 #include "../jogador/jogador.h"
 #include "../inimigo/inimigo.h"
@@ -9,34 +12,31 @@ struct Jogo
     Jogador *jogador;
     Inimigo *inimigo;
 };
+typedef struct Jogo Jogo;
 
-int jogo_criar(Jogo **jogo)
+int jogo_jogar(void)
 {
-    *jogo = malloc(sizeof **jogo);
+    int loop = 1;
+    Jogo jogo;
+    char nome[JOGADOR_NOME];
 
-    if (*jogo == NULL) return -1;
+    system(LIMPAR_TELA);
+    srand(time(NULL));
 
-    if (jogador_criar(&(*jogo)->jogador, "Jogador"))
+    puts("----------------- Aventura -----------------");
+
+    printf("Digite seu nome de aventureiro(a): ");
+    ler_string(nome, JOGADOR_NOME);
+
+    if (jogador_criar(&jogo.jogador, nome)) return -1;
+
+    while (loop)
     {
-        free(*jogo);
-        return -1;
+        loop = 0;
     }
 
-    if (inimigo_criar(&(*jogo)->inimigo, "Inimigo", 0, 0, 0))
-    {
-        jogador_liberar(&(*jogo)->jogador);
-        free(*jogo);
-        return -1;
-    }
-
-    (*jogo)->dias = 0;
+    jogador_liberar(&jogo.jogador);
 
     return 0;
-}
 
-void jogo_liberar(Jogo **jogo)
-{
-    inimigo_liberar(&(*jogo)->inimigo);
-    jogador_liberar(&(*jogo)->jogador);
-    free(*jogo);
 }
