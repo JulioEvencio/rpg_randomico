@@ -8,6 +8,7 @@
 
 #define JOGO_GERAR_TERRENO rand() % 5
 #define JOGO_GERAR_ENCONTRO rand() % 5
+#define JOGO_GERAR_FRASE rand() % 3
 
 enum Terrenos
 {
@@ -36,6 +37,7 @@ struct Jogo
 typedef struct Jogo Jogo;
 
 void jogo_imprimir_jogador(Jogo *jogo);
+void jogo_encontrar_aldeao(void);
 
 int jogo_jogar(void)
 {
@@ -89,7 +91,7 @@ int jogo_jogar(void)
         {
             case ENCONTRO_ALDEAO:
                 printf("e encontrou um aldeao... \n");
-                /* Funcao do aldeao */
+                jogo_encontrar_aldeao();
                 break;
 
             case ENCONTRO_COMERCIANTE:
@@ -141,6 +143,28 @@ void jogo_imprimir_jogador(Jogo *jogo)
 
     if (jogador_tem_bota(&jogo->jogador)) printf("Bota: Sim \n");
     else printf("Bota: Nao \n");
+
+    puts("\n--------------------------------------------");
+}
+
+void jogo_encontrar_aldeao(void)
+{
+    puts("\n--------------------------------------------");
+
+    switch (JOGO_GERAR_FRASE)
+    {
+        case 0:
+            puts("Voce nao eh bem vindo aqui!");
+            break;
+
+        case 1:
+            puts("Seu fim esta proximo!");
+            break;
+
+        case 2:
+            puts("Um heroi, eh disso que o mundo precisa!");
+            break;
+    }
 
     puts("\n--------------------------------------------");
 }
