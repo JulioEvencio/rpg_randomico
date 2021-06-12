@@ -81,6 +81,7 @@ int jogador_obter_vida(Jogador **jogador)
 void jogador_alterar_vida(Jogador **jogador, int vida)
 {
     (*jogador)->vida = vida;
+    if ((*jogador)->vida < 0) (*jogador)->vida = 0;
 }
 
 int jogador_obter_ataque(Jogador **jogador)

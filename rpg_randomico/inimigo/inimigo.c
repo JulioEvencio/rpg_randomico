@@ -55,6 +55,7 @@ int inimigo_obter_vida(Inimigo **inimigo)
 void inimigo_alterar_vida(Inimigo **inimigo, int vida)
 {
     (*inimigo)->vida = vida;
+    if ((*inimigo)->vida < 0) (*inimigo)->vida = 0;
 }
 
 int inimigo_obter_ataque(Inimigo **inimigo)
