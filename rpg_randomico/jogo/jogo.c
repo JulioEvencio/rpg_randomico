@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "../cabecalho.h"
 #include "jogo.h"
 #include "../jogador/jogador.h"
@@ -38,13 +37,12 @@ typedef struct Jogo Jogo;
 
 void jogo_imprimir_jogador(Jogo *jogo);
 char *jogo_gerar_frase_aldeao(void);
+void jogo_encontrar_padre(Jogo *jogo);
 
 int jogo_jogar(void)
 {
     int loop = 1;
     Jogo jogo = {0, NULL, NULL};
-
-    srand(time(NULL));
 
     system(LIMPAR_TELA);
     puts("----------------- Aventura -----------------");
@@ -94,24 +92,30 @@ int jogo_jogar(void)
         {
             case ENCONTRO_ALDEAO:
                 printf("e encontrou um aldeao... \n");
-                puts("\n--------------------------------------------");
+                puts("\n--------------------------------------------\n");
                 puts(jogo_gerar_frase_aldeao());
                 puts("\n--------------------------------------------");
                 break;
 
             case ENCONTRO_COMERCIANTE:
                 printf("e encontrou um comerciante... \n");
-                /* Funcao do comerciante */
+                puts("\n--------------------------------------------\n");
+                puts("Comerciante...");
+                puts("\n--------------------------------------------");
                 break;
 
             case ENCONTRO_PADRE:
                 printf("e encontrou um padre... \n");
-                /* Funcao do padre */
+                puts("\n--------------------------------------------\n");
+                jogo_encontrar_padre(&jogo);
+                puts("\n--------------------------------------------");
                 break;
 
             case ENCONTRO_INIMIGO:
                 printf("e encontrou um inimigo... \n");
-                /* Funcao do inimigo */
+                puts("\n--------------------------------------------\n");
+                puts("Inimigo...");
+                puts("\n--------------------------------------------");
                 break;
 
             case ENCONTRO_NADA:
@@ -164,5 +168,18 @@ char *jogo_gerar_frase_aldeao(void)
 
         case 2:
             return "Um heroi, eh disso que o mundo precisa!";
+    }
+}
+
+void jogo_encontrar_padre(Jogo *jogo)
+{
+    if (jogador_obter_vida(&jogo->jogador) != jogador_obter_vida_max(&jogo->jogador))
+    {
+        puts("Vou curar suas feridas! Ate logo, bravo aventureiro!");
+        jogador_alterar_vida(&jogo->jogador, jogador_obter_vida_max(&jogo->jogador));
+    }
+    else
+    {
+        puts("Cuidado com os monstros desse mundo!");
     }
 }

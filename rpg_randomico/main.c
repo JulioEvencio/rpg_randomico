@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "cabecalho.h"
 #include "menu/menu.h"
 #include "jogo/jogo.h"
@@ -7,6 +8,8 @@
 int main(void)
 {
     int loop;
+
+    srand(time(NULL));
 
     do
     {
