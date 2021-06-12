@@ -9,6 +9,7 @@
 #define JOGO_GERAR_ENCONTRO rand() % 5
 #define JOGO_GERAR_FRASE rand() % 3
 #define JOGO_GERAR_ITEM rand() % 3
+#define JOGO_GERAR_INIMIGO rand() % 2
 
 enum Terrenos
 {
@@ -33,11 +34,24 @@ enum Comerciante
     COMERCIANTE_ARMA,
     COMERCIANTE_ARMADURA,
     COMERCIANTE_BOTA,
+
     COMERCIANTE_QUER_COMPRAR = 1,
     COMERCIANTE_NAO_QUER_COMPRAR = 2,
+
     COMERCIANTE_PRECO_ARMA = 20,
     COMERCIANTE_PRECO_ARMADURA = 20,
     COMERCIANTE_PRECO_BOTA = 10
+};
+
+enum Dados_Inimigos
+{
+    GOBLIN_VIDA = 10,
+    GOBLIN_ATAQUE = 3,
+    GOBLIN_VELOCIDADE = 3,
+
+    OGRO_VIDA = 20,
+    OGRO_ATAQUE = 5,
+    OGRO_VELOCIDADE = 1
 };
 
 struct Jogo
@@ -52,10 +66,12 @@ void jogo_imprimir_jogador(Jogo *jogo);
 char *jogo_gerar_frase_aldeao(void);
 void jogo_encontrar_sacerdote(Jogo *jogo);
 void jogo_encontrar_comerciante(Jogo *jogo);
+void jogo_encontrar_inimigo(Jogo *jogo);
+void jogo_balhar(Jogo *jogo);
+void jogo_balhar_imprimir_dados(Jogo *jogo);
 
 int jogo_jogar(void)
 {
-    int loop = 1;
     Jogo jogo = {0, NULL, NULL};
 
     system(LIMPAR_TELA);
@@ -70,7 +86,7 @@ int jogo_jogar(void)
         if (jogador_criar(&jogo.jogador, nome)) return -1;
     }
 
-    while (loop)
+    while (jogador_obter_vida(&jogo.jogador) > 0)
     {
         system(LIMPAR_TELA);
         puts("----------------- Aventura -----------------");
@@ -127,17 +143,14 @@ int jogo_jogar(void)
 
             case ENCONTRO_INIMIGO:
                 printf("e encontrou um inimigo... \n");
-                puts("\n--------------------------------------------\n");
-                puts("Inimigo...");
-                puts("\n--------------------------------------------");
+                pausar_tela("Pressione enter para iniciar a batalha...");
+                jogo_encontrar_inimigo(&jogo);
                 break;
 
             case ENCONTRO_NADA:
                 printf("e encontrou nada... \n");
                 break;
         }
-
-        if (ler_numero(&loop)) loop = -1;
 
         pausar_tela("Pressione enter para continuar...");
     }
@@ -323,4 +336,109 @@ void jogo_encontrar_sacerdote(Jogo *jogo)
     {
         puts("Sacerdote: cuidado com os monstros desse mundo!");
     }
+}
+
+void jogo_encontrar_inimigo(Jogo *jogo)
+{
+    if (JOGO_GERAR_INIMIGO)
+    {
+        inimigo_criar(
+            &jogo->inimigo,
+            "Goblin",
+            GOBLIN_VIDA,
+            GOBLIN_ATAQUE,
+            GOBLIN_VELOCIDADE
+        );
+    }
+    else
+    {
+        inimigo_criar(
+            &jogo->inimigo,
+            "Ogro",
+            OGRO_VIDA,
+            OGRO_ATAQUE,
+            OGRO_VELOCIDADE
+        );
+    }
+
+    jogo_balhar_imprimir_dados(jogo);
+    jogo_balhar(jogo);
+
+    inimigo_liberar(&jogo->inimigo);
+}
+
+void jogo_balhar(Jogo *jogo)
+{
+    while (1)
+    {
+        if (jogador_obter_velocidade(&jogo->jogador) > inimigo_obter_velocidade(&jogo->inimigo))
+        {
+            printf("Voce atacou o inimigo e causou %d de dano! \n", jogador_obter_ataque(&jogo->jogador));
+            pausar_tela("Pressione enter para continuar...");
+
+            inimigo_alterar_vida(&jogo->inimigo, inimigo_obter_vida(&jogo->inimigo) - jogador_obter_ataque(&jogo->jogador));
+            jogo_balhar_imprimir_dados(jogo);
+
+            if (inimigo_obter_vida(&jogo->inimigo) <= 0)
+            {
+                puts("O inimigo morreu...");
+                break;
+            }
+
+            printf("O inimigo atacou voce e causou %d de dano! \n", inimigo_obter_ataque(&jogo->inimigo));
+            pausar_tela("Pressione enter para continuar...");
+
+            jogador_alterar_vida(&jogo->jogador, jogador_obter_vida(&jogo->jogador) - inimigo_obter_ataque(&jogo->inimigo));
+            jogo_balhar_imprimir_dados(jogo);
+
+            if (jogador_obter_vida(&jogo->jogador) <= 0)
+            {
+                jogo_balhar_imprimir_dados(jogo);
+                puts("Voce morreu...");
+                break;
+            }
+        }
+        else
+        {
+            printf("O inimigo atacou voce e causou %d de dano! \n", inimigo_obter_ataque(&jogo->inimigo));
+            pausar_tela("Pressione enter para continuar...");
+
+            jogador_alterar_vida(&jogo->jogador, jogador_obter_vida(&jogo->jogador) - inimigo_obter_ataque(&jogo->inimigo));
+            jogo_balhar_imprimir_dados(jogo);
+
+            if (jogador_obter_vida(&jogo->jogador) <= 0)
+            {
+                puts("Voce morreu...");
+                break;
+            }
+
+            printf("Voce atacou o inimigo e causou %d de dano! \n", jogador_obter_ataque(&jogo->jogador));
+            pausar_tela("Pressione enter para continuar...");
+
+            inimigo_alterar_vida(&jogo->inimigo, inimigo_obter_vida(&jogo->inimigo) - jogador_obter_ataque(&jogo->jogador));
+            jogo_balhar_imprimir_dados(jogo);
+
+            if (inimigo_obter_vida(&jogo->inimigo) <= 0)
+            {
+                puts("O inimigo morreu...");
+                break;
+            }
+        }
+    }
+}
+
+void jogo_balhar_imprimir_dados(Jogo *jogo)
+{
+    system(LIMPAR_TELA);
+    puts("\n--------------------------------------------\n");
+
+    printf("Nome: %s \n", jogador_obter_nome(&jogo->jogador));
+    printf("Vida: %d / %d \n", jogador_obter_vida(&jogo->jogador), jogador_obter_vida_max(&jogo->jogador));
+
+    puts("\n--------------------------------------------\n");
+
+    printf("Nome: %s \n", inimigo_obter_nome(&jogo->inimigo));
+    printf("Vida: %d / %d \n", inimigo_obter_vida(&jogo->inimigo), inimigo_obter_vida_max(&jogo->inimigo));
+
+    puts("\n--------------------------------------------\n");
 }
