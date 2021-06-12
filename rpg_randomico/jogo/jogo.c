@@ -8,6 +8,7 @@
 #define JOGO_GERAR_TERRENO rand() % 5
 #define JOGO_GERAR_ENCONTRO rand() % 5
 #define JOGO_GERAR_FRASE rand() % 3
+#define JOGO_GERAR_ITEM rand() % 3
 
 enum Terrenos
 {
@@ -27,6 +28,18 @@ enum Encontros
     ENCONTRO_NADA
 };
 
+enum Comerciante
+{
+    COMERCIANTE_ARMA,
+    COMERCIANTE_ARMADURA,
+    COMERCIANTE_BOTA,
+    COMERCIANTE_QUER_COMPRAR = 1,
+    COMERCIANTE_NAO_QUER_COMPRAR = 2,
+    COMERCIANTE_PRECO_ARMA = 20,
+    COMERCIANTE_PRECO_ARMADURA = 20,
+    COMERCIANTE_PRECO_BOTA = 10
+};
+
 struct Jogo
 {
     int dias;
@@ -38,6 +51,7 @@ typedef struct Jogo Jogo;
 void jogo_imprimir_jogador(Jogo *jogo);
 char *jogo_gerar_frase_aldeao(void);
 void jogo_encontrar_sacerdote(Jogo *jogo);
+void jogo_encontrar_comerciante(Jogo *jogo);
 
 int jogo_jogar(void)
 {
@@ -100,7 +114,7 @@ int jogo_jogar(void)
             case ENCONTRO_COMERCIANTE:
                 printf("e encontrou um comerciante... \n");
                 puts("\n--------------------------------------------\n");
-                puts("Comerciante...");
+                jogo_encontrar_comerciante(&jogo);
                 puts("\n--------------------------------------------");
                 break;
 
@@ -168,6 +182,133 @@ char *jogo_gerar_frase_aldeao(void)
 
         case 2:
             return "Aldeao: um heroi, eh disso que o mundo precisa!";
+    }
+}
+
+void jogo_encontrar_comerciante(Jogo *jogo)
+{
+    int opcao;
+
+    puts("Comerciante: Bem vindo!");
+
+    switch (JOGO_GERAR_ITEM)
+    {
+        case COMERCIANTE_ARMA:
+            printf("Gostaria de comprar uma espada por %d moedas de ouro? \n", COMERCIANTE_PRECO_ARMA);
+            puts("1. Sim");
+            puts("2. Nao");
+            printf("Opcao: ");
+
+            if (ler_numero(&opcao)) opcao = -1;
+
+            switch(opcao)
+            {
+                case COMERCIANTE_QUER_COMPRAR:
+                    if (jogador_obter_ouro(&jogo->jogador) >= COMERCIANTE_PRECO_ARMA)
+                    {
+                        if (!jogador_tem_arma(&jogo->jogador))
+                        {
+                            puts("Hehe, volte sempre!");
+                            jogador_alterar_ouro(&jogo->jogador, jogador_obter_ouro(&jogo->jogador) - COMERCIANTE_PRECO_ARMA);
+                            jogador_adicionar_arma(&jogo->jogador);
+                        }
+                        else
+                        {
+                            puts("Voce ja esta equipado com uma espada!");
+                        }
+                    }
+                    else
+                    {
+                        puts("Sem dinherio, sem arma!");
+                    }
+                    break;
+
+                case COMERCIANTE_NAO_QUER_COMPRAR:
+                    puts("Que pena...");
+                    break;
+
+                default:
+                    puts("Nao brinque comigo, quer saber? Vou embora que ganho mais!");
+            }
+            break;
+
+        case COMERCIANTE_ARMADURA:
+            printf("Gostaria de comprar uma armadura por %d moedas de ouro? \n", COMERCIANTE_PRECO_ARMADURA);
+            puts("1. Sim");
+            puts("2. Nao");
+            printf("Opcao: ");
+
+            if (ler_numero(&opcao)) opcao = -1;
+
+            switch(opcao)
+            {
+                case COMERCIANTE_QUER_COMPRAR:
+                    if (jogador_obter_ouro(&jogo->jogador) >= COMERCIANTE_PRECO_ARMADURA)
+                    {
+                        if (!jogador_tem_armadura(&jogo->jogador))
+                        {
+                            puts("Hehe, volte sempre!");
+                            jogador_alterar_ouro(&jogo->jogador, jogador_obter_ouro(&jogo->jogador) - COMERCIANTE_PRECO_ARMADURA);
+                            jogador_adicionar_armadura(&jogo->jogador);
+                        }
+                        else
+                        {
+                            puts("Voce ja esta equipado com uma armadura!");
+                        }
+                    }
+                    else
+                    {
+                        puts("Sem dinherio, sem armadura!");
+                    }
+                    break;
+
+                case COMERCIANTE_NAO_QUER_COMPRAR:
+                    puts("Que pena...");
+                    break;
+
+                default:
+                    puts("Nao brinque comigo, quer saber? Vou embora que ganho mais!");
+            }
+            break;
+
+        case COMERCIANTE_BOTA:
+            printf("Gostaria de comprar uma bota por %d moedas de ouro? \n", COMERCIANTE_PRECO_BOTA);
+            puts("1. Sim");
+            puts("2. Nao");
+            printf("Opcao: ");
+
+            if (ler_numero(&opcao)) opcao = -1;
+
+            switch(opcao)
+            {
+                case COMERCIANTE_QUER_COMPRAR:
+                    if (jogador_obter_ouro(&jogo->jogador) >= COMERCIANTE_PRECO_BOTA)
+                    {
+                        if (!jogador_tem_bota(&jogo->jogador))
+                        {
+                            puts("Hehe, volte sempre!");
+                            jogador_alterar_ouro(&jogo->jogador, jogador_obter_ouro(&jogo->jogador) - COMERCIANTE_PRECO_BOTA);
+                            jogador_adicionar_bota(&jogo->jogador);
+                        }
+                        else
+                        {
+                            puts("Voce ja esta equipado com uma bota!");
+                        }
+                    }
+                    else
+                    {
+                        puts("Sem dinherio, sem bota!");
+                    }
+                    break;
+
+                case COMERCIANTE_NAO_QUER_COMPRAR:
+                    puts("Que pena...");
+                    break;
+
+                default:
+                    puts("Nao brinque comigo, quer saber? Vou embora que ganho mais!");
+            }
+            break;
     }
 }
 
