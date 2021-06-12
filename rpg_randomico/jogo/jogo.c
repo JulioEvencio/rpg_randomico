@@ -22,7 +22,7 @@ enum Encontros
 {
     ENCONTRO_ALDEAO,
     ENCONTRO_COMERCIANTE,
-    ENCONTRO_PADRE,
+    ENCONTRO_SACERDOTE,
     ENCONTRO_INIMIGO,
     ENCONTRO_NADA
 };
@@ -37,7 +37,7 @@ typedef struct Jogo Jogo;
 
 void jogo_imprimir_jogador(Jogo *jogo);
 char *jogo_gerar_frase_aldeao(void);
-void jogo_encontrar_padre(Jogo *jogo);
+void jogo_encontrar_sacerdote(Jogo *jogo);
 
 int jogo_jogar(void)
 {
@@ -104,10 +104,10 @@ int jogo_jogar(void)
                 puts("\n--------------------------------------------");
                 break;
 
-            case ENCONTRO_PADRE:
-                printf("e encontrou um padre... \n");
+            case ENCONTRO_SACERDOTE:
+                printf("e encontrou um sacerdote... \n");
                 puts("\n--------------------------------------------\n");
-                jogo_encontrar_padre(&jogo);
+                jogo_encontrar_sacerdote(&jogo);
                 puts("\n--------------------------------------------");
                 break;
 
@@ -161,25 +161,25 @@ char *jogo_gerar_frase_aldeao(void)
     switch (JOGO_GERAR_FRASE)
     {
         case 0:
-            return "Voce nao eh bem vindo aqui!";
+            return "Aldeao: voce nao eh bem vindo aqui!";
 
         case 1:
-            return "Seu fim esta proximo!";
+            return "Aldeao: seu fim esta proximo!";
 
         case 2:
-            return "Um heroi, eh disso que o mundo precisa!";
+            return "Aldeao: um heroi, eh disso que o mundo precisa!";
     }
 }
 
-void jogo_encontrar_padre(Jogo *jogo)
+void jogo_encontrar_sacerdote(Jogo *jogo)
 {
     if (jogador_obter_vida(&jogo->jogador) != jogador_obter_vida_max(&jogo->jogador))
     {
-        puts("Vou curar suas feridas! Ate logo, bravo aventureiro!");
+        puts("Sacerdote: vou curar suas feridas! Ate logo, bravo aventureiro!");
         jogador_alterar_vida(&jogo->jogador, jogador_obter_vida_max(&jogo->jogador));
     }
     else
     {
-        puts("Cuidado com os monstros desse mundo!");
+        puts("Sacerdote: cuidado com os monstros desse mundo!");
     }
 }
