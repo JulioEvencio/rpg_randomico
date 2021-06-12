@@ -10,6 +10,7 @@
 #define JOGO_GERAR_FRASE rand() % 3
 #define JOGO_GERAR_ITEM rand() % 3
 #define JOGO_GERAR_INIMIGO rand() % 2
+#define JOGO_GERAR_OURO rand() % 5 + 1
 
 enum Terrenos
 {
@@ -367,6 +368,13 @@ void jogo_encontrar_inimigo(Jogo *jogo)
     pausar_tela("Pressione enter para batalhar...");
     puts("\n--------------------------------------------\n");
     jogo_balhar(jogo);
+
+    if (jogador_obter_vida(&jogo->jogador) > 0)
+    {
+        int ouro = JOGO_GERAR_OURO;
+        printf("Voce ganhou %d ouro(s)!", ouro);
+        jogador_alterar_ouro(&jogo->jogador, jogador_obter_ouro(&jogo->jogador) + ouro);
+    }
 
     inimigo_liberar(&jogo->inimigo);
 }
