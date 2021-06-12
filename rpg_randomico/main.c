@@ -4,6 +4,7 @@
 #include "cabecalho.h"
 #include "menu/menu.h"
 #include "jogo/jogo.h"
+#include "rank/rank.h"
 
 int main(void)
 {
@@ -22,7 +23,7 @@ int main(void)
                 break;
 
             case RANK:
-                puts("Rank...");
+                if (rank_imprimir()) puts("Erro ao imprimir rank!");
                 break;
 
             case SAIR:
