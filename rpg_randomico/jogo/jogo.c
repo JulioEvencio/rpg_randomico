@@ -37,23 +37,26 @@ struct Jogo
 typedef struct Jogo Jogo;
 
 void jogo_imprimir_jogador(Jogo *jogo);
-void jogo_encontrar_aldeao(void);
+char *jogo_gerar_frase_aldeao(void);
 
 int jogo_jogar(void)
 {
     int loop = 1;
     Jogo jogo = {0, NULL, NULL};
-    char nome[JOGADOR_NOME];
 
     srand(time(NULL));
 
     system(LIMPAR_TELA);
     puts("----------------- Aventura -----------------");
 
-    printf("Digite seu nome de aventureiro(a): ");
-    ler_string(nome, JOGADOR_NOME);
+    {
+        char nome[JOGADOR_NOME];
 
-    if (jogador_criar(&jogo.jogador, nome)) return -1;
+        printf("Digite seu nome de aventureiro(a): ");
+        ler_string(nome, JOGADOR_NOME);
+
+        if (jogador_criar(&jogo.jogador, nome)) return -1;
+    }
 
     while (loop)
     {
@@ -91,7 +94,9 @@ int jogo_jogar(void)
         {
             case ENCONTRO_ALDEAO:
                 printf("e encontrou um aldeao... \n");
-                jogo_encontrar_aldeao();
+                puts("\n--------------------------------------------");
+                puts(jogo_gerar_frase_aldeao());
+                puts("\n--------------------------------------------");
                 break;
 
             case ENCONTRO_COMERCIANTE:
@@ -147,24 +152,17 @@ void jogo_imprimir_jogador(Jogo *jogo)
     puts("\n--------------------------------------------");
 }
 
-void jogo_encontrar_aldeao(void)
+char *jogo_gerar_frase_aldeao(void)
 {
-    puts("\n--------------------------------------------");
-
     switch (JOGO_GERAR_FRASE)
     {
         case 0:
-            puts("Voce nao eh bem vindo aqui!");
-            break;
+            return "Voce nao eh bem vindo aqui!";
 
         case 1:
-            puts("Seu fim esta proximo!");
-            break;
+            return "Seu fim esta proximo!";
 
         case 2:
-            puts("Um heroi, eh disso que o mundo precisa!");
-            break;
+            return "Um heroi, eh disso que o mundo precisa!";
     }
-
-    puts("\n--------------------------------------------");
 }
