@@ -12,10 +12,6 @@
 #define JOGO_GERAR_INIMIGO rand() % 2
 #define JOGO_GERAR_OURO rand() % 5 + 1
 
-#define JOGO_ARQUIVO "dados/dados.txt"
-#define JOGO_ARQUIVO_MODO_ESCRITA "w"
-#define JOGO_ARQUIVO_MODO_LEITURA "r"
-
 enum Terrenos
 {
     TERRENO_CIDADE,

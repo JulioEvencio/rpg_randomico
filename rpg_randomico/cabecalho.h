@@ -2,6 +2,9 @@
 #define CABECALHO_H_INCLDUED
 
 #define LIMPAR_TELA "clear || cls"
+#define JOGO_ARQUIVO "dados/dados.txt"
+#define JOGO_ARQUIVO_MODO_ESCRITA "w"
+#define JOGO_ARQUIVO_MODO_LEITURA "r"
 
 enum
 {
