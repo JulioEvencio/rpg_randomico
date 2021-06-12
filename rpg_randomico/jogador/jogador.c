@@ -111,6 +111,7 @@ int jogador_tem_arma(Jogador **jogador)
 void jogador_adicionar_arma(Jogador **jogador)
 {
     (*jogador)->arma = 1;
+    (*jogador)->ataque += 3;
 }
 
 int jogador_tem_armadura(Jogador **jogador)
@@ -121,6 +122,7 @@ int jogador_tem_armadura(Jogador **jogador)
 void jogador_adicionar_armadura(Jogador **jogador)
 {
     (*jogador)->armadura = 1;
+    (*jogador)->vida_max += 30;
 }
 
 int jogador_tem_bota(Jogador **jogador)
@@ -131,4 +133,5 @@ int jogador_tem_bota(Jogador **jogador)
 void jogador_adicionar_bota(Jogador **jogador)
 {
     (*jogador)->bota = 1;
+    (*jogador)->velocidade += 3;
 }
