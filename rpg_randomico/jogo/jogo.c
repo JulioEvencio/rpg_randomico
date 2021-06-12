@@ -12,6 +12,10 @@
 #define JOGO_GERAR_INIMIGO rand() % 2
 #define JOGO_GERAR_OURO rand() % 5 + 1
 
+#define JOGO_ARQUIVO "dados/dados.txt"
+#define JOGO_ARQUIVO_MODO_ESCRITA "w"
+#define JOGO_ARQUIVO_MODO_LEITURA "r"
+
 enum Terrenos
 {
     TERRENO_CIDADE,
@@ -70,6 +74,7 @@ void jogo_encontrar_comerciante(Jogo *jogo);
 void jogo_encontrar_inimigo(Jogo *jogo);
 void jogo_balhar(Jogo *jogo);
 void jogo_balhar_imprimir_dados(Jogo *jogo);
+int jogo_gravar_dados(Jogo *jogo);
 
 int jogo_jogar(void)
 {
@@ -158,10 +163,12 @@ int jogo_jogar(void)
         pausar_tela("Pressione enter para continuar...");
     }
 
-    jogador_liberar(&jogo.jogador);
-
     puts("\n--------------------------------------------");
     printf("Voce sobreviveu por %d dias \n", jogo.dias);
+
+    if (jogo_gravar_dados(&jogo)) puts("Erro ao gravar dados");
+
+    jogador_liberar(&jogo.jogador);
 
     return 0;
 
@@ -464,4 +471,30 @@ void jogo_balhar_imprimir_dados(Jogo *jogo)
     printf("Vida: %d / %d \n", inimigo_obter_vida(&jogo->inimigo), inimigo_obter_vida_max(&jogo->inimigo));
 
     puts("\n--------------------------------------------\n");
+}
+
+int jogo_gravar_dados(Jogo *jogo)
+{
+    int dias;
+    char nome[JOGADOR_NOME];
+
+    FILE *file = fopen(JOGO_ARQUIVO, JOGO_ARQUIVO_MODO_LEITURA);
+
+    if (file == NULL) return -1;
+
+    fscanf(file, "%[^;] %*c", nome);
+    fscanf(file, "%d", &dias);
+
+    fclose(file);
+
+    if (jogo->dias < dias) return 0;
+
+    file = fopen(JOGO_ARQUIVO, JOGO_ARQUIVO_MODO_ESCRITA);
+
+    fprintf(file, "%s;", jogador_obter_nome(&jogo->jogador));
+    fprintf(file, "%d", jogo->dias);
+
+    fclose(file);
+
+    return 0;
 }
