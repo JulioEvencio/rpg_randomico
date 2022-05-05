@@ -21,6 +21,19 @@ Neste programa o RPG é *solo*, *randômico* e *baseado em texto*.
 
 É baseado em texto pois não há uma interface gráfica, isto é, todas as ações são mostradas para o usuário via texto.
 
+## Repositório
+
+### Compilar
+Na pasta do arquivo **makefile**, digite:
+```
+make all
+```
+
+### Clone
+```
+https://github.com/JulioEvencio/rpg_randomico.git
+```
+
 ## O jogo
 
 ###  Tela inicial
